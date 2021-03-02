@@ -18,7 +18,8 @@ rel="stylesheet">
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
-  <p><a href="logout.php">ログアウト</a></p>        
+  <p><a href="logout.php">ログアウト</a></p> 
+  <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>       
 </header>
 <!-- ヘッダー画面終了 -->
 <!-- ここからナビ部分 -->
