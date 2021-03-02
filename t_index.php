@@ -12,34 +12,44 @@ rel="stylesheet">
 <div id="wrapper">
 <!-- ここからヘッダー画面 -->
 <header class="header">
-  <h1>hemzon.co.jp</h1>
+  <h1><a href="#">HEMZON.CO.JP</a></h1>
+  <!-- 商品検索 -->
   <form action="item.php" method="post" class="keyword">
     <label for="search">商品検索</label>
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
-  <p><a href="logout.php">ログアウト</a></p> 
-  <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>       
+  <!-- ログアウト -->
+  <p><a href="logout.php">ログアウト</a></p>
+   <!--個別にこんにちは  -->
+  <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
+  <span class="material-icons"><a href="cart.php">add_shopping_cart カート</a></span>       
 </header>
-<!-- ヘッダー画面終了 -->
+<!-- ヘッダー終了 -->
 <!-- ここからナビ部分 -->
 <nav class="top_nav">
 　<ul>
+    <li><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
 　  <li>ランキング</li>
 　  <li><a href="login.php">ログイン</a></li>
 　  <li>新着商品</li>
 　</ul>
 </nav>
 
-<form action="category.php" name="cat_DVD" method="post">
-  <input type="hidden" name="cal" value="DVD">
-  <a href="javascript: cat_DVD.submit()">DVD</a>
-</form>
+<div class="overlay">
+  <span class="material-icons" id="close">close</span>
 
-<form action="category.php" name="cat_food" method="post">
-  <input type="hidden" name="cal" value="food">
-  <a href="javascript: cat_food.submit()">食べ物</a>
-</form>
+  <form action="category.php" name="cat_DVD" method="post">
+    <input type="hidden" name="cal" value="DVD">
+    <a href="javascript: cat_DVD.submit()">DVD</a>
+  </form>
+
+  <form action="category.php" name="cat_food" method="post">
+    <input type="hidden" name="cal" value="food">
+    <a href="javascript: cat_food.submit()">食べ物</a>
+  </form>
+</div>
+
 <!-- ナビ部分終了 -->
 
 <main>

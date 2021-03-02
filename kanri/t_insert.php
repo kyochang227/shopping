@@ -19,6 +19,16 @@
       <input type="text" name="name_ruby" value="<?php echo $name_ruby ?>">
     </p>
     <p>
+      カテゴリー<br>
+    <select name="category">
+      <?php
+        foreach($cate as $ca){
+          echo "<option value=$ca>".$ca."</option>";
+        }
+      ?>
+    </select>
+    </p>
+    <p>
       商品説明<br>
       <textarea name="comment" rows="10" cols="60"><?php echo $comment ?></textarea>
     </p>
