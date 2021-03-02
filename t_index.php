@@ -30,9 +30,14 @@ rel="stylesheet">
 　</ul>
 </nav>
 
-<form action="categori.php" method="post">
-  <input type="hidden" name="DVD" value="<?php echo $goods['category'] ?>">
-  <input type="submit" value="DVD">
+<form action="category.php" name="cat_DVD" method="post">
+  <input type="hidden" name="cal" value="DVD">
+  <a href="javascript: cat_DVD.submit()">DVD</a>
+</form>
+
+<form action="category.php" name="cat_food" method="post">
+  <input type="hidden" name="cal" value="food">
+  <a href="javascript: cat_food.submit()">食べ物</a>
 </form>
 <!-- ナビ部分終了 -->
 
