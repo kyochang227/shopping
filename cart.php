@@ -27,7 +27,7 @@
 
   //カート空の時
   $class="";
-  $cartemp="カートは空です";
+  $cartemp="カートの中身が空です";
   if($_SESSION['cart']==null){
     echo $cartemp;
     $class="hide";

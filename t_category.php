@@ -14,7 +14,7 @@ rel="stylesheet">
 
 <!-- ここからヘッダー画面 -->
 <header id="header">
-<h1><a href="#">HEMZON.CO.JP</a></h1>
+<h1><a href="index.php">HEMZON.CO.JP</a></h1>
   <!-- 商品検索 -->
   <form action="item.php" method="post" class="keyword">
     <label for="search">商品検索</label>
@@ -33,14 +33,24 @@ rel="stylesheet">
 　<ul>
     <li><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
 　  <li>ランキング</li>
-　  <li><a href="login.php">ログイン</a></li>
 　  <li>新着商品</li>
 　</ul>
+</nav>
+
+<!-- スライドショー -->
+<nav>
+  <ul id="slide">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/6.jpg" alt=""></li>
+			<li><img src="images/8.jpg" alt=""></li>
+			<li><img src="images/noimage.jpg" alt=""></li>
+	</ul>
 </nav>
 
 <div class="overlay">
   <span class="material-icons" id="close">close</span>
 
+  <h2>カテゴリー別</h2>
   <?php foreach($_SESSION['category'] as $c):?>
       <form action="category.php" name="<?php echo "cat_".$c;?>" method="post">
       <input type="hidden" name="cal" value="<?php echo $c;?>">
