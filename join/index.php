@@ -73,6 +73,7 @@ if($_REQUEST['action']=='rewrite'){
         <dd>
             <input type="text" name="name" size="35" maxlength="255"
             value="<?php echo htmlspecialchars($_POST['name'],ENT_QUOTES); ?>">
+
             <?php if($error['name']=='blank'):?>
             <p class="error">*氏名を入力してください</p>        
             <?php endif;?>
@@ -81,6 +82,7 @@ if($_REQUEST['action']=='rewrite'){
         <dd>
             <input type="text" name="email" size="35" maxlength="255"
             value="<?php echo htmlspecialchars($_POST['email'],ENT_QUOTES); ?>">
+
             <?php if($error['email']=='blank'):?>
             <p class="error">*メールアドレスを入力してください</p>        
             <?php endif;?>

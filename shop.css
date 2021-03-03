@@ -194,3 +194,8 @@ footer {
   color: white;
   background: grey;
 }
+
+/* フォーム */
+.error{
+  color: red;
+}
