@@ -9,5 +9,13 @@ $st=$pdo->prepare("SELECT * FROM goods WHERE name LIKE :keyword OR name_ruby LIK
 $st->bindParam(':keyword',$keyword,PDO::PARAM_STR);
 $st->execute();
 $item=$st->fetchAll();
+
+//検索に引っかからなかった場合
+$keywordemp="商品が見当たりません";
+$class="hidden";
+if($item==null){
+    echo $keywordemp;
+}
+
 require 't_item.php'
 ?>

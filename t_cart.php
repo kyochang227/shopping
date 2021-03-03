@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>カート</h1>
-<table>
+<table class="<?php echo $class?>">
   <tr><th>商品名</th><th>単価</th><th>数量</th><th>小計</th></tr>
   <?php foreach($rows as $r) { ?>
     <tr>

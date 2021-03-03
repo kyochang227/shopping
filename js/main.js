@@ -7,6 +7,8 @@
 //     $('body').toggleClass('noscroll');
 // });
 
+//ナビ　ハンバーガメニュー
+{
     const open = document.getElementById('open');
     const overlay = document.querySelector('.overlay');
     const close = document.getElementById('close');
@@ -20,4 +22,9 @@
         overlay.classList.remove('show');    
         open.classList.remove('hide');    
     });
+}
 
+// スライドショー
+{
+    
+}

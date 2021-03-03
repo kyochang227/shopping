@@ -24,5 +24,17 @@
     $sum += $num * $row['price']; //商品の価格と数量を掛けたものを合算
     $rows[] = $row; //商品データの入った配列を$rows配列に追加する
   }
+
+  //カート空の時
+  $class="";
+  $cartemp="カートは空です";
+  if($_SESSION['cart']==null){
+    echo $cartemp;
+    $class="hide";
+  }
+
   require 't_cart.php';
 ?>
+<style>
+  .hide{display: none;}
+</style>

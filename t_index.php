@@ -1,9 +1,9 @@
 <!DOCTYPE html> <!--トップページのデザイン-->
 <html lang="ja">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hemzon 公式サイト</title>
+<title>Hemzon ホーム画面</title>
 <link rel="stylesheet" href="shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -39,15 +39,12 @@ rel="stylesheet">
 <div class="overlay">
   <span class="material-icons" id="close">close</span>
 
-  <form action="category.php" name="cat_DVD" method="post">
-    <input type="hidden" name="cal" value="DVD">
-    <a href="javascript: cat_DVD.submit()">DVD</a>
-  </form>
-
-  <form action="category.php" name="cat_food" method="post">
-    <input type="hidden" name="cal" value="food">
-    <a href="javascript: cat_food.submit()">食べ物</a>
-  </form>
+  <?php foreach($_SESSION['category'] as $c):?>
+      <form action="category.php" name="<?php echo "cat_".$c;?>" method="post">
+      <input type="hidden" name="cal" value="<?php echo $c;?>">
+      <a href="<?php echo "javascript: cat_".$c.".submit()";?>"><?php echo $c;?></a>
+    </form>
+  <?php endforeach; ?>
 </div>
 
 <!-- ナビ部分終了 -->
