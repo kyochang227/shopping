@@ -9,6 +9,7 @@ $st=$pdo->prepare("SELECT * FROM goods WHERE name LIKE :keyword OR name_ruby LIK
 $st->bindParam(':keyword',$keyword,PDO::PARAM_STR);
 $st->execute();
 $item=$st->fetchAll();
+$st->closeCursor();
 
 //検索に引っかからなかった場合
 $keywordemp="商品が見当たりません";

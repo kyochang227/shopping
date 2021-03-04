@@ -3,21 +3,21 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>カート | Noodle Shop</title>
+<title>カート | HEMZON</title>
 <link rel="stylesheet" href="shop.css">
 </head>
 <body>
 <h1>カート</h1>
-<table class="<?php echo $class?>">
+<table class="<?php echo $class;?>">
   <tr><th>商品名</th><th>単価</th><th>数量</th><th>小計</th></tr>
-  <?php foreach($rows as $r) { ?>
+  <?php foreach($rows as $r) { ;?>
     <tr>
-      <td><?php echo $r['name'] ?></td>
-      <td><?php echo $r['price'] ?></td>
-      <td><?php echo $r['num'] ?></td>
-      <td><?php echo $r['price'] * $r['num'] ?> 円</td>
+      <td><?php echo $r['name']; ?></td>
+      <td><?php echo $r['price']; ?></td>
+      <td><?php echo $r['num']; ?></td>
+      <td><?php echo $r['price'] * $r['num']; ?> 円</td>
     </tr>
-  <?php } ?>
+  <?php } ;?>
   <tr><td colspan='2'> </td><td><strong>合計</strong></td><td><?php echo $sum ?> 円</td></tr>
 </table>
 <div class="base">

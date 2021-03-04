@@ -3,7 +3,7 @@
   require 'common.php';
   $rows = array(); //カートに入れた商品データを格納
   $sum = 0; //カートの合計金額
-  $pdo = connect(); 
+  $pdo = connect();
 
   if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array(); //isset=true or false 
 
@@ -14,6 +14,7 @@
       @$_SESSION['cart'][$_POST['code']] += $_POST['num']; //すでにカートに商品が入ってる状態でカートに入れると足される
     }
   }
+  
 
   foreach($_SESSION['cart'] as $code => $num) {
     $st = $pdo->prepare("SELECT * FROM goods WHERE code=?"); //ユーザーが打った情報をSQL文に含める準備
@@ -23,8 +24,8 @@
     $row['num'] = strip_tags($num); //htmlタグを取り除く
     $sum += $num * $row['price']; //商品の価格と数量を掛けたものを合算
     $rows[] = $row; //商品データの入った配列を$rows配列に追加する
+    $_SESSION['cart2']=$row;
   }
-
 
   //カート空の時
   $class="";

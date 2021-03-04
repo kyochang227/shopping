@@ -10,7 +10,8 @@
     $db=connect();
     $members=$db->prepare('SELECT * FROM members WHERE id=?');
     $members->execute(array($_SESSION['id']));
-    $member=$members->fetch();    
+    $member=$members->fetch();  
+    $members->closeCursor();  
   }else{
     header('Location: login.php'); exit();
   }
@@ -18,10 +19,12 @@
   $pdo = connect();
   $st = $pdo->query("SELECT * FROM goods"); //table:goodsを取得
   $goods = $st->fetchAll(); //goodsレコードをすべて取り出す
+  $st->closeCursor();
 
   //カテゴリーのデータをセッションに保存
   $stcat=$pdo->query("SELECT category FROM item_category");
   $categorys=$stcat->fetchAll(PDO::FETCH_COLUMN);
+  $stcat->closeCursor();
   $_SESSION['category']=$categorys;
 
   require 't_index.php';

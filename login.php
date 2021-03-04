@@ -19,6 +19,7 @@ if(!empty($_POST)){
             sha1($_POST['password'])
         ));
         $member=$login->fetch();
+        $login->closeCursor();
 
         if($member){
             $_SESSION['id']=$member['id'];

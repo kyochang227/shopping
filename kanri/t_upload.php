@@ -14,7 +14,7 @@
       <input type="file" name="pic">
     </p>
     <p>
-      <input type="hidden" name="code" value="<?php echo $code ?>">
+      <input type="hidden" name="code" value="<?php echo $code ?>"><!--コードを取得-->
       <input type="submit" name="submit" value="追加">
     </p>
   </form>

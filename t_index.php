@@ -32,6 +32,7 @@ rel="stylesheet">
     <li><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
 　  <li>ランキング</li>
 　  <li>新着商品</li>
+　  <li><a href="history.php">購入履歴</a></li>
 　</ul>
 </nav>
 

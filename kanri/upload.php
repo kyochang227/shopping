@@ -11,7 +11,7 @@
       $error .= 'ファイルを選択してください。<br>';
     }
   } else {
-    $code = $_GET['code'];
+    $code = $_GET['code'];//画像アドレスは$_GET['code'].jpgで表示される
   }
   require 't_upload.php';
 ?>

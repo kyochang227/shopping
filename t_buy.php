@@ -42,7 +42,7 @@
       <?php endif; ?>
     </p>
     <p>
-      <input type="submit" name="submit" value="購入">
+      <input type="submit" name="submit" value="確認">
     </p>
   </form>
 </div>
