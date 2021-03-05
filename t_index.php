@@ -10,27 +10,43 @@ rel="stylesheet">
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
 </head>
 <body>
+  
 <div id="wrapper">
-<!-- ここからヘッダー画面 -->
-<header class="header">
-  <h1><a href="index.php">HEMZON.CO.JP</a></h1>
+
+<div class="container-fluid"><!--gridシステム使用-->
+
+  <!-- ここからヘッダー画面 -->
+  <header class="header">
+
+  <div class="row">
+  
+  <!-- ロゴ -->
+  <h1 class="col-lg-4"><a href="index.php">HEMZON.CO.JP</a></h1>
   <!-- 商品検索 -->
-  <form action="item.php" method="post" class="keyword">
+  <form class="col-lg-4 keyword" action="item.php" method="post">
     <label for="search">商品検索</label>
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
-  <span class="material-icons" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>       
+  <!-- カート -->
+  <span class="material-icons col-lg-4" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>
+
+  </div>
+
 </header>
 <!-- ヘッダー終了 -->
+
 <!-- ここからナビ部分 -->
 <nav class="top_nav">
-　<ul>
-    <li><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
-　  <li>ランキング</li>
-　  <li>新着商品</li>
-　  <li><a href="history.php">購入履歴</a></li>
+
+　<ul class="row">
+
+    <li class="col-lg-1"><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
+　  <li class="col-lg-1">新着商品</li>
+　  <li class="col-lg-1"><a href="history.php">購入履歴</a></li>
+
 　</ul>
+
 </nav>
 
 <!-- スライドショー -->
@@ -46,7 +62,7 @@ rel="stylesheet">
 <div class="overlay">
   <span class="material-icons" id="close">close</span>
      <!--個別にこんにちは  -->
-     <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
+      <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
   <!-- ログアウト -->
   <p><a href="logout.php">ログアウト</a></p>
 
@@ -64,18 +80,21 @@ rel="stylesheet">
 <main>
 <!-- ここから商品一覧画面 -->
 <div class="items">
-<table>
-  <?php foreach ($goods as $g) { ?> <!--テーブルgoodsからカラムを取り出す-->
+
+    <div class="table-resposive">
+
+    <table class="table table-striped table-bordered">
+    <?php foreach ($goods as $g) { ;?> <!--テーブルgoodsからカラムを取り出す-->
     <tr>
       <td>
-        <?php echo img_tag($g['code']) ?> <!--codeから値を取り出す-->
+        <?php echo img_tag($g['code']) ;?> <!--codeから値を取り出す-->
       </td>
       <td>
-        <p class="goods"><?php echo $g['name'] ?></p>
-        <p><?php echo nl2br($g['comment']) ?></p>
+        <p class="goods"><?php echo $g['name'] ;?></p>
+        <p><?php echo nl2br($g['comment']) ;?></p>
       </td>
       <td width="80">
-        <p><?php echo $g['price'] ?> 円</p>
+        <p><?php echo $g['price'] ;?> 円</p>
         <form action="cart.php" method="post"> <!--form部分-->
           <select name="num">
             <?php
@@ -84,13 +103,16 @@ rel="stylesheet">
               }
             ?>
           </select>
-          <input type="hidden" name="code" value="<?php echo $g['code'] ?>">
+          <input type="hidden" name="code" value="<?php echo $g['code'] ;?>">
           <input type="submit" name="submit" value="カートへ">
         </form>
       </td>
     </tr>
-  <?php } ?>
-</table>
+    <?php } ;?>
+    </table>
+    
+    </div>
+
 </div>
 
 </main>
@@ -98,6 +120,8 @@ rel="stylesheet">
 <footer>
   <small>&copy;2021 Hemzon.All rights reserved.</small>
 </footer>
+
+</div>
 
 </div>
 

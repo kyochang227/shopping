@@ -11,26 +11,41 @@ rel="stylesheet">
 </head>
 <body>
 <div id="wrapper">
+
+<div class="container-fluid"><!--gridシステム使用-->
+
   <!-- ここからヘッダー画面 -->
-<header class="header">
-  <h1><a href="index.php">HEMZON.CO.JP</a></h1>
+  <header class="header">
+
+  <div class="row">
+  
+  <!-- ロゴ -->
+  <h1 class="col-lg-4"><a href="index.php">HEMZON.CO.JP</a></h1>
   <!-- 商品検索 -->
-  <form action="item.php" method="post" class="keyword">
+  <form class="col-lg-4 keyword" action="item.php" method="post">
     <label for="search">商品検索</label>
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
-  <span class="material-icons" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>       
+  <!-- カート -->
+  <span class="material-icons col-lg-4" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>
+
+  </div>
+
 </header>
 <!-- ヘッダー終了 -->
+
 <!-- ここからナビ部分 -->
 <nav class="top_nav">
-　<ul>
-    <li><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
-　  <li>ランキング</li>
-　  <li>新着商品</li>
-　  <li><a href="history.php">購入履歴</a></li>
+
+　<ul class="row">
+
+    <li class="col-lg-1"><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
+　  <li class="col-lg-1">新着商品</li>
+　  <li class="col-lg-1"><a href="history.php">購入履歴</a></li>
+
 　</ul>
+
 </nav>
 
 <!-- スライドショー -->
@@ -61,6 +76,10 @@ rel="stylesheet">
 
 <!-- ナビ部分終了 -->
 
+<main>
+
+<div class="items">
+
 <!-- カートが空の時に実行 -->
 <?php
   if($_SESSION['cart']==null){
@@ -69,7 +88,10 @@ rel="stylesheet">
   }
 ?>
 
-<table class="<?php echo $class;?>">
+<div class="table-resposive">
+
+<table class="<?php echo $class;?> table table-striped table-bordered">
+
   <tr><th>商品名</th><th>単価</th><th>数量</th><th>小計</th></tr>
   <?php foreach($rows as $r) { ;?>
     <tr>
@@ -80,16 +102,27 @@ rel="stylesheet">
     </tr>
   <?php } ;?>
   <tr><td colspan='2'> </td><td><strong>合計</strong></td><td><?php echo $sum ?> 円</td></tr>
+
 </table>
+
+</div>
+
+</div>
+
+
 <div class="base">
   <a href="index.php">お買い物に戻る</a>　
   <a href="cart_empty.php">カートを空にする</a>　
   <a href="buy.php">購入する</a>
 </div>
 
+</main>
+
 <footer>
   <small>&copy;2021 Hemzon.All rights reserved.</small>
 </footer>
+
+</div>
 
 </div>
 

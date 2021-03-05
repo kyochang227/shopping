@@ -13,26 +13,40 @@ rel="stylesheet">
 <body>
 <div id="wrapper">
 
-<!-- ここからヘッダー画面 -->
-<header class="header">
-  <h1><a href="index.php">HEMZON.CO.JP</a></h1>
+<div class="container-fluid"><!--gridシステム使用-->
+
+  <!-- ここからヘッダー画面 -->
+  <header class="header">
+
+  <div class="row">
+  
+  <!-- ロゴ -->
+  <h1 class="col-lg-4"><a href="index.php">HEMZON.CO.JP</a></h1>
   <!-- 商品検索 -->
-  <form action="item.php" method="post" class="keyword">
+  <form class="col-lg-4 keyword" action="item.php" method="post">
     <label for="search">商品検索</label>
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
-  <span class="material-icons" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>       
+  <!-- カート -->
+  <span class="material-icons col-lg-4" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>
+
+  </div>
+
 </header>
 <!-- ヘッダー終了 -->
+
 <!-- ここからナビ部分 -->
 <nav class="top_nav">
-　<ul>
-    <li><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
-　  <li>ランキング</li>
-　  <li>新着商品</li>
-　  <li><a href="history.php">購入履歴</a></li>
+
+　<ul class="row">
+
+    <li class="col-lg-1"><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
+　  <li class="col-lg-1">新着商品</li>
+　  <li class="col-lg-1"><a href="history.php">購入履歴</a></li>
+
 　</ul>
+
 </nav>
 
 <!-- スライドショー -->
@@ -65,13 +79,18 @@ rel="stylesheet">
 
 <main>
 <div id="items">
+
 <!-- 該当商品がなかった場合に表示 -->
 <?php
 if($item==null){
   echo $keywordemp;
 }
 ?>
-<table>
+
+<div class="table-resposive">
+
+<table class="table table-striped table-bordered">
+
   <?php foreach ($item as $it) { ?> <!--テーブルgoodsからカラムを取り出す-->
     <tr>
       <td>
@@ -97,7 +116,11 @@ if($item==null){
       </td>
     </tr>
   <?php } ?>
+
 </table>
+
+</div>
+
 </div>
 </main>
 
@@ -106,6 +129,8 @@ if($item==null){
 <footer>
   <small>&copy;2021 Hemzon.All rights reserved.</small>
 </footer>
+
+</div>
 
 </div>
 
