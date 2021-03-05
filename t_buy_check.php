@@ -26,5 +26,6 @@
     </dl>
     <div><input type="submit" value="購入"></div>
 </form>
+
 </body>
 </html>

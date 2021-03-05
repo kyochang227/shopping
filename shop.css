@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 共通部分 */
 a{
   text-decoration: none;
   cursor: pointer;
@@ -21,18 +22,31 @@ ul {
   list-style-type: none;
 }
 
+/* ヘッダー */
 header {
   background: hotpink;
   display: flex;
   text-align: center;
 }
 
+/* 検索 */
+.keyword {
+  margin: 30px 0;
+}
+/* カート */
+#cart {
+  margin: 30px 0;
+}
+
+/* ヘッダー終了 */
+
+/* ここからnav */
 .top_nav{
   background: rgb(41, 1, 1);
   color: white;
 }
 
-.top_nav>ul{
+.top_nav ul{
   margin: 0;
   padding: 0;
   display: flex;
@@ -190,6 +204,11 @@ th, td {
   transform: none;
 }
 
+/* main部分 */
+
+/* items */
+
+/* ここからフッター */
 footer {
   color: white;
   background: grey;

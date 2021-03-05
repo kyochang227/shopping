@@ -2,6 +2,9 @@
 <?php
 require 'common.php';
 
+//検索に引っかからなかった場合に使用
+$keywordemp="商品が見当たりません";
+
 $pdo = connect();
 $keyword=$_POST['keyword'];
 $keyword='%'.$keyword.'%';
@@ -10,13 +13,6 @@ $st->bindParam(':keyword',$keyword,PDO::PARAM_STR);
 $st->execute();
 $item=$st->fetchAll();
 $st->closeCursor();
-
-//検索に引っかからなかった場合
-$keywordemp="商品が見当たりません";
-$class="hidden";
-if($item==null){
-    echo $keywordemp;
-}
 
 require 't_item.php'
 ?>

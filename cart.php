@@ -5,6 +5,10 @@
   $sum = 0; //カートの合計金額
   $pdo = connect();
 
+  //カート空の時に使う変数
+  $class="";
+  $cartemp="カートの中身が空です";
+
   if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array(); //isset=true or false 
 
   // 例　商品コード「2」を4個カートに→$_SESSION['cart'][2]=4
@@ -23,16 +27,9 @@
     $st->closeCursor();  //再びSQL文を発行できるようにサーバーへの接続を解放
     $row['num'] = strip_tags($num); //htmlタグを取り除く
     $sum += $num * $row['price']; //商品の価格と数量を掛けたものを合算
+    $row['sum']=$sum;
     $rows[] = $row; //商品データの入った配列を$rows配列に追加する
-    $_SESSION['cart2']=$row;
-  }
-
-  //カート空の時
-  $class="";
-  $cartemp="カートの中身が空です";
-  if($_SESSION['cart']==null){
-    echo $cartemp;
-    $class="hide";
+    $_SESSION['history']=$row; //購入後、購入履歴にデータを表示する為のセッション
   }
 
   require 't_cart.php';

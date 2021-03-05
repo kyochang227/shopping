@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
+<link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
 </head>
 <body>
 <div id="wrapper">
@@ -19,11 +20,7 @@ rel="stylesheet">
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
-  <!-- ログアウト -->
-  <p><a href="logout.php">ログアウト</a></p>
-   <!--個別にこんにちは  -->
-  <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
-  <span class="material-icons"><a href="cart.php">add_shopping_cart カート</a></span>       
+  <span class="material-icons" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>       
 </header>
 <!-- ヘッダー終了 -->
 <!-- ここからナビ部分 -->
@@ -48,6 +45,10 @@ rel="stylesheet">
 
 <div class="overlay">
   <span class="material-icons" id="close">close</span>
+     <!--個別にこんにちは  -->
+     <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
+  <!-- ログアウト -->
+  <p><a href="logout.php">ログアウト</a></p>
 
   <h2>カテゴリー別</h2>
   <?php foreach($_SESSION['category'] as $c):?>
@@ -62,7 +63,7 @@ rel="stylesheet">
 
 <main>
 <!-- ここから商品一覧画面 -->
-<div id="items">
+<div class="items">
 <table>
   <?php foreach ($goods as $g) { ?> <!--テーブルgoodsからカラムを取り出す-->
     <tr>
@@ -101,6 +102,10 @@ rel="stylesheet">
 </div>
 
   <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+		<script
+			type="text/javascript"
+			src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
