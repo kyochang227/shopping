@@ -9,6 +9,12 @@
   $class="";
   $cartemp="カートの中身が空です";
 
+  $cartmes="hide";
+
+  function cartNull(){//カートの中が空の状態でボタンが押された場合
+    $cartmes="show";
+ }
+
   if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array(); //isset=true or false 
 
   // 例　商品コード「2」を4個カートに→$_SESSION['cart'][2]=4
@@ -32,8 +38,13 @@
     $_SESSION['history']=$row; //購入後、購入履歴にデータを表示する為のセッション
   }
 
+  var_dump($rows);
+
   require 't_cart.php';
 ?>
+
 <style>
-  .hide{display: none;}
+  .hide{display: none;}/*カートの中が空の時にクラスが有効になる */
+
+  .show{display: inline;}
 </style>

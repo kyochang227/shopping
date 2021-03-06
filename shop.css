@@ -113,10 +113,6 @@ main {
   display: flex;
 }
 
-#items>ul {
-  list-style-type: none;
-}
-
 /* ナビ　ハンバーガーメニュー */
 .sp-menu #open {
   cursor: pointer;
@@ -139,6 +135,7 @@ main {
   opacity: 0;
   pointer-events: none;
   transition: .5s;
+  z-index: 1;
 }
 
 .overlay.show {
@@ -156,7 +153,6 @@ main {
 }
 
 .overlay ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;    
 }
@@ -176,7 +172,9 @@ main {
 /* main部分 */
 
 /* items */
-
+.item_img{
+  width: 150px;
+}
 /* ここからフッター */
 footer {
   color: white;

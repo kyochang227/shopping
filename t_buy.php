@@ -10,40 +10,67 @@
 <h1>購入</h1>
 <div class="base">
   <form action="buy.php" method="post">
-    <p>
-      お名前<br>
-      <input type="text" name="name" value="<?php echo $name; ?>">
 
-      <?php if($error['name']=='blank'):?>
-      <p class="error">*氏名を入力してください</p>        
-      <?php endif;?>
-    </p>
-    <p>
-      ご住所<br>
-      <input type="text" name="address" size="60" value="<?php echo $address; ?>">
+    <dl>
+      <dt>お名前</dt>
+      <dd>
+        <input type="text" name="name" value="<?php echo $name; ?>">
 
-      <?php if($error['address']=='blank'):?>
-      <p class="error">*住所を入力してください</p>        
-      <?php endif;?>
-    </p>
-    <p>
-      電話番号<br>
-      <input type="text" name="tel" value="<?php echo $tel; ?>">
+        <?php if($error['name']=='blank'):?>
+        <p class="error">*氏名を入力してください</p>        
+        <?php endif;?>
+      </dd>
 
-      <?php if($error['tel']=='blank'):?>
+    <dt>ご住所</dt>
+      <dd>
+        <input type="text" name="address" size="60" value="<?php echo $address; ?>">
+
+        <?php if($error['address']=='blank'):?>
+        <p class="error">*住所を入力してください</p>        
+        <?php endif;?>
+      </dd>
+
+    <dt>電話番号</dt>
+      <dd>
+        <input type="text" name="tel" value="<?php echo $tel; ?>">
+
+        <?php if($error['tel']=='blank'):?>
         <p class="error">*電話番号を入力してください</p>
-      <?php endif;?>
+        <?php endif;?>
 
-      <?php if($error['tel']=='typo'): ?>
-        <p class="error">
+        <?php if($error['tel']=='typo'): ?>
+          <p class="error">
           *電話番号の入力に誤りがあります。<br>
           例:000-0000-0000
         </p>
-      <?php endif; ?>
-    </p>
-    <p>
-      <input type="submit" name="submit" value="確認">
-    </p>
+        <?php endif; ?>
+      </dd>
+
+    <dt>メールアドレス</dt>
+      <dd>
+        <input type="text" name="email" value="<?php echo $email; ?>">
+
+        <?php if($error['email']=='blank'):?>
+        <p class="error">*メールアドレスを入力してください</p>
+        <?php endif;?>
+      </dd>
+
+    <dt>パスワード</dt>
+      <dd>
+        <input type="password" name="password" value="<?php echo $password; ?>">
+
+        <?php if($error['password']=='blank'):?>
+        <p class="error">*パスワードを入力してください</p>
+        <?php endif;?>
+
+        <?php if($error['password']=='mismatch'):?>
+        <p class="error">*パスワードが一致しません</p>
+        <?php endif;?>
+
+      </dd>
+    </dl>
+
+    <div><input type="submit" name="submit" value="確認"></div>
   </form>
 </div>
 <div class="base">

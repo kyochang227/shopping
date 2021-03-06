@@ -81,12 +81,11 @@ rel="stylesheet">
   
 <div id="items">
 
-<div class="table-resposive">
+<div class="table-resposive row">
 
-<table class="table table-striped table-bordered">
-
-  <?php foreach ($categorys as $cate) { ?> <!--テーブルgoodsからカラムを取り出す-->
-    <tr>
+  <?php foreach ($categorys as $cate): ?> <!--テーブルgoodsからカラムを取り出す-->
+    <table class="table table-striped table-bordered col-lg-4">
+    <tr class="item_img">
       <td>
         <?php echo img_tag($cate['code']) ?> <!--codeから値を取り出す-->
       </td>
@@ -109,9 +108,8 @@ rel="stylesheet">
         </form>
       </td>
     </tr>
-  <?php } ?>
-
-</table>
+    </table>
+  <?php endforeach; ?>
 
 </div>
 

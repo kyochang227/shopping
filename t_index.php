@@ -81,12 +81,12 @@ rel="stylesheet">
 <!-- ここから商品一覧画面 -->
 <div class="items">
 
-    <div class="table-resposive">
+    <div class="table-resposive row">
 
-    <table class="table table-striped table-bordered">
-    <?php foreach ($goods as $g) { ;?> <!--テーブルgoodsからカラムを取り出す-->
+    <?php foreach ($goods as $g): ?> <!--テーブルgoodsからカラムを取り出す-->
+    <table class="table table-striped table-bordered col-lg-4">
     <tr>
-      <td>
+      <td class="item_img">
         <?php echo img_tag($g['code']) ;?> <!--codeから値を取り出す-->
       </td>
       <td>
@@ -108,8 +108,8 @@ rel="stylesheet">
         </form>
       </td>
     </tr>
-    <?php } ;?>
     </table>
+    <?php endforeach;?>
     
     </div>
 

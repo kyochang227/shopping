@@ -87,12 +87,11 @@ if($item==null){
 }
 ?>
 
-<div class="table-resposive">
+<div class="table-resposive row">
 
-<table class="table table-striped table-bordered">
-
-  <?php foreach ($item as $it) { ?> <!--テーブルgoodsからカラムを取り出す-->
-    <tr>
+  <?php foreach ($item as $it):?> <!--テーブルgoodsからカラムを取り出す-->
+    <table class="table table-striped table-bordered col-lg-4">
+    <tr class="item_img">
       <td>
         <?php echo img_tag($it['code']) ?> <!--codeから値を取り出す-->
       </td>
@@ -115,9 +114,8 @@ if($item==null){
         </form>
       </td>
     </tr>
-  <?php } ?>
-
-</table>
+    </table>
+  <?php endforeach; ?>
 
 </div>
 

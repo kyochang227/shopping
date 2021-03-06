@@ -80,10 +80,12 @@ rel="stylesheet">
 
 <div class="items">
 
+<div class="<?php echo $cartmes;?>">商品買ってからね</div>
+
 <!-- カートが空の時に実行 -->
 <?php
   if($_SESSION['cart']==null){
-    echo $cartemp;
+    echo "<p>".$cartemp."</p>";
     $class="hide";
   }
 ?>
@@ -113,7 +115,7 @@ rel="stylesheet">
 <div class="base">
   <a href="index.php">お買い物に戻る</a>　
   <a href="cart_empty.php">カートを空にする</a>　
-  <a href="buy.php">購入する</a>
+  <a href="buy.php" onclick="<?php cartNull();?>">購入する</a>
 </div>
 
 </main>

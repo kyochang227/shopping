@@ -11,9 +11,6 @@ if(!empty($_POST)){
     if($_POST['email']==''){
         $error['email']='blank';
     }
-    if(strlen($_POST['password'])<8){
-        $error['password']='length';
-    }
     if($_POST['password']==''){
         $error['password']='blank';
     }
@@ -31,15 +28,18 @@ if(!empty($_POST)){
 
     //email正規表現
     $mailcheck="/^[a-zA-Z0-9]+[a-zA-Z0-9\._-]*@[a-zA-Z0-9_-]+.[a-zA-Z0-9\._-]+$/";
+
     if(!preg_match($mailcheck,$_POST['email'])){
         $error['email']='typo';
     }
-
+   
     //パスワード正規表現
     if(!(preg_match("/^[a-zA-Z0-9]{8,20}$/",$_POST['password'])//8字以上20文字以下
+
     && preg_match("/[a-z]+/",$_POST['password']) //アルファベット小文字は存在するか
     && preg_match("/[A-Z]+/",$_POST['password'])//アルファベット大文字は存在するか
     && preg_match("/[0-9+]+/",$_POST['password']))){//数字は存在するか
+
         $error['password']='typo';
     }
     
@@ -100,17 +100,13 @@ if($_REQUEST['action']=='rewrite'){
             <input type="password" name="password" size="10" maxlength="20"
             value="<?php echo htmlspecialchars($_POST['password'],ENT_QUOTES); ?>">
             
-            <?php if($error['password']=='length'):?>
-            <p class="error">*パスワードは8文字以上で入力してください</p>        
+            <?php if($error['password']=='blank'):?>
+            <p class="error">*パスワードを入力してください</p>        
             <?php endif;?>
 
             <?php if($error['password']=='typo'):?>
             <p class="error">*パスワードの入力に誤りがあります。<br>
             半角英数字を使用し、8文字以上入力してください</p>        
-            <?php endif;?>
-            
-            <?php if($error['password']=='blank'):?>
-            <p class="error">*パスワードを入力してください</p>        
             <?php endif;?>
         </dd>    
     </dl>

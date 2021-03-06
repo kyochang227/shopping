@@ -81,6 +81,8 @@ rel="stylesheet">
 
 <main>
 
+<h1>購入履歴</h1>
+
 <div class="table-resposive">
 
 <table class="table table-striped table-bordered">
@@ -112,8 +114,6 @@ rel="stylesheet">
 </table>
 
 </div>
-
-<h1>購入履歴</h1>
 
 <div class="base">
   <a href="index.php">お買い物に戻る</a>　　
