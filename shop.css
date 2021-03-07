@@ -71,7 +71,7 @@ ul{
 }
 
 #slide>li:nth-child(n+2){
-	display:none;;
+	display:none;
 }
 
 #controll{
@@ -89,8 +89,8 @@ ul{
 }
 
 #back{
-	position:absolute;
-	width:0;
+	position: absolute;
+  width:0;
 	height:0;
 	border-top:25px solid transparent;
 	border-right:25px solid rgba(255,255,255,0.5);
@@ -171,7 +171,8 @@ main {
 
 /* main部分 */
 
-/* items */
+/* ここからitems(商品一覧) */
+
 .item_img{
   width: 150px;
 }

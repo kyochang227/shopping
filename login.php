@@ -25,6 +25,8 @@ if(!empty($_POST)){
             $_SESSION['id']=$member['id'];
             $_SESSION['time']=time();
             $_SESSION['name']=$member['name'];
+            $_SESSION['email']=$member['email'];
+            $_SESSION['password']=$member['password'];
 
             //ログイン情報を記録する
             if($_POST['save']=='on'){

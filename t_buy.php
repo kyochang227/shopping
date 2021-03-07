@@ -53,6 +53,10 @@
         <?php if($error['email']=='blank'):?>
         <p class="error">*メールアドレスを入力してください</p>
         <?php endif;?>
+
+        <?php if($error['email']=='mismatch'):?>
+        <p class="error">*メールアドレスが一致しません</p>
+        <?php endif;?>
       </dd>
 
     <dt>パスワード</dt>

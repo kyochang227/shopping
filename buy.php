@@ -2,11 +2,11 @@
 <?php
   require 'common.php';
   
-  $name = htmlspecialchars($_POST['name']); //名前
-  $address = htmlspecialchars($_POST['address']); //住所
-  $tel = htmlspecialchars($_POST['tel']); //電話番号
-  $email=htmlspecialchars($_POST['email']);
-  $password=htmlspecialchars($_POST['password']);
+  $name = htmlspecialchars($_POST['name'],ENT_QUOTES); //名前
+  $address = htmlspecialchars($_POST['address'],ENT_QUOTES); //住所
+  $tel = htmlspecialchars($_POST['tel'],ENT_QUOTES); //電話番号
+  $email=htmlspecialchars($_POST['email'],ENT_QUOTES);
+  $password=htmlspecialchars(($_POST['password']),ENT_QUOTES);
   $telcheck="/^[0-9]{2,4}-[0-9]{2,4}-[0-9]{3,4}$/";
 
   //カートの中身が空の状態で遷移たとき
@@ -17,6 +17,8 @@
 
   //エラー項目の確認
   if (!empty($_POST)) {
+    $passwordsha1=sha1($password);
+
     //入力欄が空だった場合
     if($name==''){
       $error['name']='blank';
@@ -30,10 +32,13 @@
     if($email==''){
       $error['email']='blank';
     }
-    if($password==''){
+    if($_SESSION['email'] != $email){
+      $error['email']='mismatch';
+    }
+    if($passwordsha1==''){
       $error['password']='blank';
     }
-    if($_SESSION['password'] != $password){
+    if($_SESSION['password'] != $passwordsha1){
       $error['password']='mismatch';
     }
 

@@ -1,9 +1,10 @@
-<!--カートの中身のデザイン部分-->
+<!-- 新着商品　システム部分 -->
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>カート | HEMZON</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-sacale=1">
+<title>HEMZON | 新着商品</title>
 <link rel="stylesheet" href="shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -41,7 +42,7 @@ rel="stylesheet">
 　<ul class="row">
 
     <li class="col-lg-1"><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
-    <li class="col-lg-1"><a href="newitem.php">新着商品</a></li>
+　  <li class="col-lg-1">新着商品</li>
 　  <li class="col-lg-1"><a href="history.php">購入履歴</a></li>
 
 　</ul>
@@ -77,48 +78,46 @@ rel="stylesheet">
 <!-- ナビ部分終了 -->
 
 <main>
+  
+<div id="items">
 
-<div class="items">
+<div class="table-resposive row">
 
-<div class="<?php echo $cartmes;?>">商品買ってからね</div>
-
-<!-- カートが空の時に実行 -->
-<?php
-  if($_SESSION['cart']==null){
-    echo "<p>".$cartemp."</p>";
-    $class="hide";
-  }
-?>
-
-<div class="table-resposive">
-
-<table class="<?php echo $class;?> table table-striped table-bordered">
-
-  <tr><th>商品名</th><th>単価</th><th>数量</th><th>小計</th></tr>
-  <?php foreach($rows as $r) { ;?>
-    <tr>
-      <td><?php echo $r['name']; ?></td>
-      <td><?php echo $r['price']; ?></td>
-      <td><?php echo $r['num']; ?></td>
-      <td><?php echo $r['price'] * $r['num']; ?> 円</td>
+  <?php foreach ($newitem as $n): ?> <!--テーブルgoodsからカラムを取り出す-->
+    <table class="table table-striped table-bordered col-lg-4">
+    <tr class="item_img">
+      <td>
+        <?php echo img_tag($n['code']); ?> <!--codeから値を取り出す-->
+      </td>
+      <td>
+        <p class="goods"><?php echo $n['name']; ?></p>
+        <p><?php echo nl2br($n['comment']); ?></p>
+      </td>
+      <td width="80">
+        <p><?php echo $n['price']; ?> 円</p>
+        <form action="cart.php" method="post"> <!--form部分-->
+          <select name="num">
+            <?php
+              for ($i = 0; $i <= 9; $i++) { //処理9回まわす
+                echo "<option>$i</option>"; //<option>タグと値を生成
+              }
+            ?>
+          </select>
+          <input type="hidden" name="code" value="<?php echo $n['code']; ?>">
+          <input type="submit" name="submit" value="カートへ">
+        </form>
+      </td>
     </tr>
-  <?php } ;?>
-  <tr><td colspan='2'> </td><td><strong>合計</strong></td><td><?php echo $sum ?> 円</td></tr>
-
-</table>
+    </table>
+  <?php endforeach; ?>
 
 </div>
 
-</div>
-
-
-<div class="base">
-  <a href="index.php">お買い物に戻る</a>　
-  <a href="cart_empty.php">カートを空にする</a>　
-  <a href="buy.php" onclick="<?php cartNull();?>">購入する</a>
 </div>
 
 </main>
+
+<p><a href="index.php">トップページに戻る</a></p>
 
 <footer>
   <small>&copy;2021 Hemzon.All rights reserved.</small>
@@ -127,7 +126,6 @@ rel="stylesheet">
 </div>
 
 </div>
-
 
 <script src="js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
