@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>購入 | Noodle Shop</title>
+<title>HEMZON | 購入手続き</title>
 <link rel="stylesheet" href="shop.css">
 </head>
 <body>

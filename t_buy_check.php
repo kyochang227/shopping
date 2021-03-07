@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hemzon 新規会員登録確認画面</title>
+<title>Hemzon | 購入確認</title>
 <link rel="stylesheet" href="shop.css">
 </head>
 <body>

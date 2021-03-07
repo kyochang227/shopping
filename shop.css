@@ -14,6 +14,10 @@ ul{
   background: rgb(218, 225, 228);
 }
 
+small{
+  display: flex;
+}
+
 /* ヘッダー */
 .keyword{
   padding: 10px 0;
@@ -179,7 +183,7 @@ main {
 /* ここからフッター */
 footer {
   color: white;
-  background: grey;
+  background: rgb(0, 0, 0);
 }
 
 /* フォーム */

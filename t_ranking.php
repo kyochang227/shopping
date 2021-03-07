@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hemzon ランキング</title>
+<title>Hemzon | ランキング</title>
 <link rel="stylesheet" href="shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -88,6 +88,14 @@ rel="stylesheet">
     <?php foreach ($ranking as $r): ?> <!--テーブルgoodsからカラムを取り出す-->
     <table class="table table-striped table-bordered col-lg-4">
     <tr>
+      <td colspan="3">
+        <?php 
+          echo $counter."位";
+          $counter++;
+        ?>      
+      </td>
+    </tr>
+    <tr>
       <td class="item_img">
         <?php echo img_tag($r['code']) ;?> <!--codeから値を取り出す-->
       </td>
@@ -118,6 +126,8 @@ rel="stylesheet">
 </div>
 
 </main>
+
+<p><a href="index.php">トップページに戻る</a></p>
 
 <footer>
   <small>&copy;2021 Hemzon.All rights reserved.</small>

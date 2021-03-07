@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>カート | HEMZON</title>
+<title>HEMZON | カート</title>
 <link rel="stylesheet" href="shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -43,6 +43,7 @@ rel="stylesheet">
     <li class="col-lg-1"><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
     <li class="col-lg-1"><a href="newitem.php">新着商品</a></li>
 　  <li class="col-lg-1"><a href="history.php">購入履歴</a></li>
+　  <li class="col-lg-1"><a href="ranking.php">ランキング</a></li>
 
 　</ul>
 
