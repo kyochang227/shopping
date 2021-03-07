@@ -1,9 +1,10 @@
-<!DOCTYPE html> <!--トップページのデザイン-->
+<!-- ランキング デザイン部分 -->
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hemzon ホーム画面</title>
+<title>Hemzon ランキング</title>
 <link rel="stylesheet" href="shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -84,18 +85,18 @@ rel="stylesheet">
 
     <div class="table-resposive row">
 
-    <?php foreach ($goods as $g): ?> <!--テーブルgoodsからカラムを取り出す-->
+    <?php foreach ($ranking as $r): ?> <!--テーブルgoodsからカラムを取り出す-->
     <table class="table table-striped table-bordered col-lg-4">
     <tr>
       <td class="item_img">
-        <?php echo img_tag($g['code']) ;?> <!--codeから値を取り出す-->
+        <?php echo img_tag($r['code']) ;?> <!--codeから値を取り出す-->
       </td>
       <td>
-        <p class="goods"><?php echo $g['name'] ;?></p>
-        <p><?php echo nl2br($g['comment']) ;?></p>
+        <p class="goods"><?php echo $r['name'] ;?></p>
+        <p><?php echo nl2br($r['comment']) ;?></p>
       </td>
       <td width="80">
-        <p><?php echo $g['price'] ;?> 円</p>
+        <p><?php echo $r['price'] ;?> 円</p>
         <form action="cart.php" method="post"> <!--form部分-->
           <select name="num">
             <?php
@@ -104,7 +105,7 @@ rel="stylesheet">
               }
             ?>
           </select>
-          <input type="hidden" name="code" value="<?php echo $g['code'] ;?>">
+          <input type="hidden" name="code" value="<?php echo $r['code'] ;?>">
           <input type="submit" name="submit" value="カートへ">
         </form>
       </td>
