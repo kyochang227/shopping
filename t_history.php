@@ -88,7 +88,7 @@ rel="stylesheet">
 
 <table class="table table-striped table-bordered">
     <tr>
-        <td>id</td>
+        <td>ユーザーid</td>
         <td>氏名</td>
         <td>住所</td>
         <td>電話番号</td>

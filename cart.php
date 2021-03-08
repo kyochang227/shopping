@@ -23,16 +23,14 @@
   foreach($_SESSION['cart'] as $code => $num) {
     $st = $pdo->prepare("SELECT * FROM goods WHERE code=?"); //ユーザーが打った情報をSQL文に含める準備
     $st->execute(array($code)); //入力情報を含んだSQLを代入
-    $row = $st->fetch(); //レコードを取り出す fetchはshopの行を配列化している
+    $row = $st->fetch(PDO::FETCH_ASSOC); //レコードを取り出す fetchはshopの行を配列化している
     $st->closeCursor();  //再びSQL文を発行できるようにサーバーへの接続を解放
     $row['num'] = strip_tags($num); //htmlタグを取り除く
     $sum += $num * $row['price']; //商品の価格と数量を掛けたものを合算
     $row['sum']=$sum;
     $rows[] = $row; //商品データの入った配列を$rows配列に追加する
-    $_SESSION['history']=$row; //購入後、購入履歴にデータを表示する為のセッション
+    $_SESSION['history']=$rows; //購入後、購入履歴にデータを表示する為のセッション
   }
-
-  var_dump($rows);
 
   require 't_cart.php';
 ?>
