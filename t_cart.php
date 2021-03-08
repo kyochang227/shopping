@@ -81,12 +81,12 @@ rel="stylesheet">
 
 <div class="items">
 
-<div class="<?php echo $cartmes;?>">商品買ってからね</div>
-
 <!-- カートが空の時に実行 -->
 <?php
   if($_SESSION['cart']==null){
+    echo "<div class='"."container null"."'>";
     echo "<p>".$cartemp."</p>";
+    echo "</div>";
     $class="hide";
   }
 ?>
@@ -115,14 +115,18 @@ rel="stylesheet">
 
 <div class="base">
   <a href="index.php">お買い物に戻る</a>　
-  <a href="cart_empty.php">カートを空にする</a>　
-  <a href="buy.php" onclick="<?php cartNull();?>">購入する</a>
+  <a href="cart_empty.php" class="<?php echo $class;?>">カートを空にする</a>　
+  <a href="buy.php" class="<?php echo $class;?>">購入する</a>
 </div>
 
 </main>
 
 <footer>
-  <small>&copy;2021 Hemzon.All rights reserved.</small>
+  <p><a href="newitem.php">新着商品</a></p>
+  <p><a href="history.php">購入履歴</a></p>
+  <p><a href="ranking.php">ランキング</a></p>
+
+  <p class="copyrights"><small>&copy;2021 Hemzon.All rights reserved.</small></p>
 </footer>
 
 </div>

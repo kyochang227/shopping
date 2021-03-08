@@ -124,7 +124,11 @@ rel="stylesheet">
 
 
 <footer>
-  <small>&copy;2021 Hemzon.All rights reserved.</small>
+  <p><a href="newitem.php">新着商品</a></p>
+  <p><a href="history.php">購入履歴</a></p>
+  <p><a href="ranking.php">ランキング</a></p>
+
+  <p class="copyrights"><small>&copy;2021 Hemzon.All rights reserved.</small></p>
 </footer>
 
 </div>

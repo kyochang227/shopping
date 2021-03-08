@@ -7,13 +7,7 @@
 
   //カート空の時に使う変数
   $class="";
-  $cartemp="カートの中身が空です";
-
-  $cartmes="hide";
-
-  function cartNull(){//カートの中が空の状態でボタンが押された場合
-    $cartmes="show";
- }
+  $cartemp="カートの中身が空です";//空の時に表示されるメッセージ
 
   if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array(); //isset=true or false 
 

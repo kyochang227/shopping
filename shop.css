@@ -14,10 +14,6 @@ ul{
   background: rgb(218, 225, 228);
 }
 
-small{
-  display: flex;
-}
-
 /* ヘッダー */
 .keyword{
   padding: 10px 0;
@@ -186,7 +182,24 @@ footer {
   background: rgb(0, 0, 0);
 }
 
+.copyrights{
+  text-align: center;
+}
+
 /* フォーム */
 .error{
   color: red;
+}
+
+/* カート画面 */
+.null{
+  height: 300px;
+  border-radius: 10px;
+  background: white;
+  text-align: center;
+}
+
+.null p{
+  margin: 0;
+  padding-top: 150px;
 }
