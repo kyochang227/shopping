@@ -1,4 +1,4 @@
-<!-- 商品画面デザイン部分　システム部分 -->
+<!-- 検索でキャッチした商品のみ表示する　システム部分 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -53,10 +53,10 @@ rel="stylesheet">
 <!-- スライドショー -->
 <nav>
   <ul id="slide">
-			<li><img src="images/1.jpg" alt=""></li>
-			<li><img src="images/6.jpg" alt=""></li>
-			<li><img src="images/8.jpg" alt=""></li>
-			<li><img src="images/noimage.jpg" alt=""></li>
+			<li><img src="images/slide1.jpg" alt=""></li>
+			<li><img src="images/slide2.jpg" alt=""></li>
+			<li><img src="images/slide3.jpg" alt=""></li>
+			<li><img src="images/slide4.jpg" alt=""></li>
 	</ul>
 </nav>
 

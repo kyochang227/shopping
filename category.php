@@ -1,11 +1,13 @@
+<!-- カテゴリー別商品画面 プログラム部分 -->
 <?php
-require 'common.php';
+    require('common.php');
 
-$calname=$_POST['cal'];
-$pdo=connect();
-$st=$pdo->prepare("SELECT * FROM goods WHERE category='".$calname."'");
-$st->execute();
-$categorys=$st->fetchAll();
+    $pdo=connect();
 
-require 't_category.php';
+    $calname=$_POST['cal'];
+    $st=$pdo->prepare("SELECT * FROM goods WHERE category='".$calname."'");
+    $st->execute();
+    $categorys=$st->fetchAll();
+
+    require('t_category.php');
 ?>

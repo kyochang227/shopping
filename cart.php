@@ -1,13 +1,15 @@
-<!--カートのプログラム部分-->
+<!--カート プログラム部分-->
 <?php
-  require 'common.php';
-  $rows = array(); //カートに入れた商品データを格納
-  $sum = 0; //カートの合計金額
+  require('common.php');
+
   $pdo = connect();
 
+  $rows = array(); //カートに入れた商品データを格納
+  $sum = 0; //カートの合計金額 初期値を0とする
+
   //カート空の時に使う変数
-  $class="";
-  $cartemp="カートの中身が空です";//空の時に表示されるメッセージ
+  $class=""; //カートが空の時に値を与える
+  $cartEmpty="カートの中身が空です"; //空の時に表示されるメッセージ
 
   if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array(); //isset=true or false 
 
@@ -32,7 +34,7 @@
     $_SESSION['history']=$rows; //購入後、購入履歴にデータを表示する為のセッション
   }
 
-  require 't_cart.php';
+  require('t_cart.php');
 ?>
 
 <style>

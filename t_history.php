@@ -1,4 +1,4 @@
-<!--購入履歴-->
+<!--購入履歴　デザイン部分-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +12,9 @@ rel="stylesheet">
 <body>
 <div id="wrapper">
   
-<!-- ここからヘッダー画面 -->
-<header class="header">
-
 <div class="container-fluid"><!--gridシステム使用-->
 
-  <!-- ここからヘッダー画面 -->
+  <!-- ヘッダー画面 -->
   <header class="header">
 
   <div class="row">
@@ -38,7 +35,7 @@ rel="stylesheet">
 </header>
 <!-- ヘッダー終了 -->
 
-<!-- ここからナビ部分 -->
+<!-- トップナビ -->
 <nav class="top_nav">
 
 　<ul class="row">
@@ -51,43 +48,58 @@ rel="stylesheet">
 　</ul>
 
 </nav>
+<!-- トップナビ終了 -->
 
 <!-- スライドショー -->
 <nav>
-  <ul id="slide">
-			<li><img src="images/1.jpg" alt=""></li>
-			<li><img src="images/6.jpg" alt=""></li>
-			<li><img src="images/8.jpg" alt=""></li>
-			<li><img src="images/noimage.jpg" alt=""></li>
-	</ul>
-</nav>
 
+  <ul id="slide">
+
+			<li><img src="images/slide1.jpg" alt=""></li>
+			<li><img src="images/slide2.jpg" alt=""></li>
+			<li><img src="images/slide3.jpg" alt=""></li>
+			<li><img src="images/slide4.jpg" alt=""></li>
+
+	</ul>
+
+</nav>
+<!-- スライドショー終了 -->
+
+<!-- ハンバーガーメニュー　ナビ -->
 <div class="overlay">
+
   <span class="material-icons" id="close">close</span>
-     <!--個別にこんにちは  -->
-     <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
+  <!--個別にこんにちは  -->
+  <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
   <!-- ログアウト -->
   <p><a href="logout.php">ログアウト</a></p>
 
   <h2>カテゴリー別</h2>
+  <!-- カテゴリーを自動生成 -->
   <?php foreach($_SESSION['category'] as $c):?>
-      <form action="category.php" name="<?php echo "cat_".$c;?>" method="post">
+
+    <form action="category.php" name="<?php echo "cat_".$c;?>" method="post">
       <input type="hidden" name="cal" value="<?php echo $c;?>">
       <a href="<?php echo "javascript: cat_".$c.".submit()";?>"><?php echo $c;?></a>
     </form>
-  <?php endforeach; ?>
+
+  <?php endforeach ;?>
+
 </div>
 
-<!-- ナビ部分終了 -->
+<!-- ハンバーガーメニュー　ナビ終了 -->
 
 <main>
 
+<!-- 購入履歴　表示 -->
 <h1>購入履歴</h1>
 
 <div class="table-resposive">
 
 <table class="table table-striped table-bordered">
+
     <tr>
+
         <td>ユーザーid</td>
         <td>氏名</td>
         <td>住所</td>
@@ -97,9 +109,13 @@ rel="stylesheet">
         <td>個数</td>
         <td>合計</td>
         <td>購入日時</td>
+
     </tr>
+
   <?php foreach($history as $h):?>
+
     <tr>
+
       <td><?php echo $h['user_id']; ?></td>
       <td><?php echo $h['name']; ?></td>
       <td><?php echo $h['address']; ?></td>
@@ -109,7 +125,9 @@ rel="stylesheet">
       <td><?php echo $h['item_num']; ?></td>
       <td><?php echo $h['item_sum']; ?></td>
       <td><?php echo $h['created_at']; ?></td>
+
     </tr>
+
   <?php endforeach;?>
 
 </table>
@@ -119,28 +137,30 @@ rel="stylesheet">
 <div class="base">
   <a href="index.php">お買い物に戻る</a>　　
 </div>
+<!-- 購入履歴　表示終了 -->
 
 </main>
 
-
+<!-- フッター -->
 <footer>
+
   <p><a href="newitem.php">新着商品</a></p>
   <p><a href="history.php">購入履歴</a></p>
   <p><a href="ranking.php">ランキング</a></p>
 
   <p class="copyrights"><small>&copy;2021 Hemzon.All rights reserved.</small></p>
+
 </footer>
+<!-- フッター終了 -->
 
 </div>
 
 </div>
 
 
-<script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-		<script
-			type="text/javascript"
-			src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
