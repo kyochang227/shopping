@@ -90,11 +90,11 @@ rel="stylesheet">
 <!-- 商品一覧画面 -->
 <div class="items">
 
-    <div class="table-resposive row">
+    <div class="container table-resposive">
 
     <?php foreach ($ranking as $r): ?> <!--テーブルgoodsからカラムを取り出す-->
 
-    <table class="table table-striped table-bordered col-lg-4">
+    <table class="table table-striped table-bordered">
     <tr>
 
       <td colspan="3">

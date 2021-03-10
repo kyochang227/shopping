@@ -7,7 +7,7 @@
     //検索に引っかからなかった場合に使用
     $keywordemp = "商品が見当たりません";
 
-    $keyword = $_POST['keyword'];
+    $keyword = htmlspecialchars($_POST['keyword'],ENT_QUOTES);
     $keyword = '%'.$keyword.'%';
     $st = $pdo->prepare("SELECT * FROM goods WHERE name LIKE :keyword OR name_ruby LIKE :keyword");//:=$ $keywordをsql文で使用できるようにする
     $st->bindParam(':keyword',$keyword,PDO::PARAM_STR);

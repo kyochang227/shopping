@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /* 共通部分 */
+body{
+  background: rgb(218, 225, 228);
+}
+
 a{
   text-decoration: none;/*これは優先的に処理される*/
   cursor: pointer;
@@ -14,6 +18,25 @@ ul{
   background: rgb(218, 225, 228);
 }
 
+/* ログイン */
+#lead{
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.login{
+  text-align: center;
+}
+
+.login dl dd:nth-child(4){
+  margin-bottom: 100px;
+}
+/* ログイン終了 */
+
+
+/* トップ画面 */
+
+
 /* ヘッダー */
 .keyword{
   padding: 10px 0;
@@ -24,7 +47,7 @@ ul{
 }
 /* ヘッダー終了 */
 
-/* ここからnav */
+/*トップナビ*/
 .top_nav{
   background: rgb(41, 1, 1);
   color: white;
@@ -36,6 +59,7 @@ ul{
   padding: 0;
   display: flex;
 }
+/* トップナビ終了 */
 
 /* スライドショー*/
 #slide,#controll,#slide>li,#controll>li{
@@ -107,11 +131,8 @@ ul{
 	border-bottom:25px solid transparent;
 	border-left:25px solid rgba(255,255,255,0.5);
 }
-/* スライドショーここまで */
+/* スライドショー終了*/
 
-main {
-  display: flex;
-}
 
 /* ナビ　ハンバーガーメニュー */
 .sp-menu #open {
@@ -169,14 +190,18 @@ main {
   transform: none;
 }
 
-/* main部分 */
+/* main */
 
-/* ここからitems(商品一覧) */
+/* items(商品一覧) */
 
 .item_img{
   width: 150px;
 }
-/* ここからフッター */
+/* items(商品一覧)終了 */
+
+/* main終了 */
+
+/* フッター */
 footer {
   color: white;
   background: rgb(0, 0, 0);
@@ -185,6 +210,7 @@ footer {
 .copyrights{
   text-align: center;
 }
+/* フッター終了 */
 
 /* フォーム */
 .error{
@@ -203,3 +229,35 @@ footer {
   margin: 0;
   padding-top: 150px;
 }
+
+/* 購入履歴 */
+#buy_history{
+  text-align: center;
+}
+/* 購入履歴終了 */
+
+/* 購入画面 購入確認画面 */
+.base_buy {
+  text-align: center;
+}
+
+.base{
+  padding-bottom: 50px;
+}
+
+.base_buy h1{
+  margin-bottom: 100px;
+}
+
+.base_buy form{
+  margin-bottom: 100px;
+}
+
+.base_buy h2{
+  margin-bottom: 100px;
+}
+
+.base_buy .container{
+  margin-bottom: 100px;
+}
+/* 購入画面 購入確認画面 終了*/

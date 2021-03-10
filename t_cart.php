@@ -107,7 +107,7 @@ rel="stylesheet">
 
 ?>
 
-<div class="table-resposive">
+<div class="container table-resposive">
 
 <table class="<?php echo $class;?> table table-striped table-bordered">
 

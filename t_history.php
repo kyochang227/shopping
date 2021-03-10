@@ -92,9 +92,9 @@ rel="stylesheet">
 <main>
 
 <!-- 購入履歴　表示 -->
-<h1>購入履歴</h1>
+<h1 id="buy_history">購入履歴</h1>
 
-<div class="table-resposive">
+<div class="container table-resposive">
 
 <table class="table table-striped table-bordered">
 

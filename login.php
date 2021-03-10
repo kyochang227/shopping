@@ -70,17 +70,16 @@ if(!empty($_POST)){
 <link rel="stylesheet" href="shop.css">
 </head>
 <body>
+
 <div id="wrapper">
 
-    <div class="container-fluid">
-
-    <div id="lead">
-        <p>メールアドレスとパスワードを記入してログインして下さい。</p>
-        <p>入会手続きがまだの方はこちらからどうぞ。</p>
+    <section id="lead">
+        <h1>下記項目を入力し、ログインして下さい。</h1>
+        <h2>入会手続きがまだの方はこちらからどうぞ。</h2>
         <p>&raquo;<a href="join/">入会手続きをする</a></p>
-    </div>
+    </section>
 
-    <form action="" method="post">
+    <form action="" method="post" class="login">
 
         <dl>
             <dt>メールアドレス</dt>
@@ -120,8 +119,6 @@ if(!empty($_POST)){
         <div><input type="submit" value="ログインする"></div>
 
     </form>
-
-    </div>
 
 </div>
 

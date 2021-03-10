@@ -1,29 +1,39 @@
 <!-- 購入確認画面　プログラム部分 -->
 <?php
-require 'common.php';
+    require('common.php');
 
-$user_id=$_SESSION['id'];
-$name=$_SESSION['buy']['name'];
-$address=$_SESSION['buy']['address'];
-$tel=$_SESSION['buy']['tel'];
-
-if(!isset($_SESSION['buy'])){
-    header('Location: buy.php');
-    exit();
-}
-
-if(!empty($_POST)){
     $pdo=connect();
-    for($i=0;$i<count($_SESSION['history']);$i++){
-        $item_name=$_SESSION['history'][$i]['name'];
-        $item_price=$_SESSION['history'][$i]['price'];
-        $item_num=$_SESSION['history'][$i]['num'];
-        $item_sum = $_SESSION['history'][$i]['sum'];
+
+    $user_id=$_SESSION['id'];
+    $name=htmlspecialchars($_SESSION['buy']['name'],ENT_QUOTES);
+    $address=htmlspecialchars($_SESSION['buy']['address'],ENT_QUOTES);
+    $tel=htmlspecialchars($_SESSION['buy']['tel'],ENT_QUOTES);
+    //購入する商品を表示
+    $rows=$_SESSION['history'];
+
+    //セッションに購入者の情報がなかった場合
+    if(!isset($_SESSION['buy'])){
+
+        header('Location: buy.php');
+        exit();
+
+    }
+
+    //購入ボタンを押したら
+    if(!empty($_POST)){
+
+        for($i=0;$i<count($rows);$i++){
+
+        $item_name= $rows[$i]['name'];
+        $item_price= $rows[$i]['price'];
+        $item_num= $rows[$i]['num'];
+        $item_sum = $rows[$i]['sum'];
     
         $st=$pdo->prepare("INSERT INTO buy_history (user_id,name,address,tel,item_name,item_price,item_num,item_sum,created_at)
         VALUES (".$user_id.", '".$name."','".$address."','".$tel."','".$item_name."',".$item_price.",".$item_num.",".$item_sum.",NOW())");
         $st->execute();
         $st->closeCursor();
+
     }
 
 
@@ -32,7 +42,8 @@ if(!empty($_POST)){
     $_SESSION['history']=null;
 
     header('Location: t_buy_complete.php');
-}
 
-require 't_buy_check.php';
+    }
+
+    require('t_buy_check.php');
 ?>

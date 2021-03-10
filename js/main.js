@@ -1,14 +1,5 @@
 'use strict';
 
-//ハンバーガーメニュー
-// $('.open').on('click',function(){ //.nurger-btnをクリックすると
-//     $('.open').toggleClass('close');//.closeclassを追加/削除
-//     $('.overlay').toggleClass('slide-in');//.nav-wrapperがフェードイン、フェードアウト
-//     $('body').toggleClass('noscroll');
-// });
-
-//ナビ　ハンバーガメニュー
-{
     const open = document.getElementById('open');
     const overlay = document.querySelector('.overlay');
     const close = document.getElementById('close');
@@ -22,7 +13,7 @@
         overlay.classList.remove('show');    
         open.classList.remove('hide');    
     });
-}
+
 
 // スライドショー
     let slide;
