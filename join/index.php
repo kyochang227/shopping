@@ -1,6 +1,6 @@
 <!-- 会員登録画面 -->
 <?php
-    require('../common.php');
+    require('../controller/common.php');
 
     $pdo=connect();
 
@@ -154,7 +154,7 @@ rel="stylesheet">
 
     <div class="base">
         <input type="submit" value="入力内容を確認する"><br>
-        <a href="../login.php">ログイン画面に戻る</a>
+        <a href="../model/login.php">ログイン画面に戻る</a>
     </div>
 
 </form>

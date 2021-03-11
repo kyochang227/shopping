@@ -1,6 +1,6 @@
 <!-- 検索でキャッチした商品のみ表示する　システム部分 -->
 <?php
-    require('common.php');
+    require('../controller/common.php');
 
     $pdo = connect();
 
@@ -15,5 +15,5 @@
     $item = $st->fetchAll();
     $st->closeCursor();
 
-    require('t_item.php');
+    require('../view/t_item.php');
 ?>

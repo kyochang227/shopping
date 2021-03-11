@@ -1,6 +1,6 @@
 <!--カート プログラム部分-->
 <?php
-  require('common.php');
+  require('../controller/common.php');
 
   $pdo = connect();
 
@@ -34,7 +34,7 @@
     $_SESSION['history']=$rows; //購入後、購入履歴にデータを表示する為のセッション
   }
 
-  require('t_cart.php');
+  require('../view/t_cart.php');
 ?>
 
 <style>

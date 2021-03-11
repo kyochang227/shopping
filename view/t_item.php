@@ -5,10 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-sacale=1">
 <title>HEMZON | "<?php echo htmlspecialchars($_POST["keyword"],ENT_QUOTES,'UTF-8');?>"の検索結果</title>
-<link rel="stylesheet" href="shop.css">
+<link rel="stylesheet" href="../shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
-<link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
 </head>
 <body>
 <div id="wrapper">
@@ -21,15 +21,15 @@ rel="stylesheet">
   <div class="row">
   
   <!-- ロゴ -->
-  <h1 class="col-lg-4"><a href="index.php">HEMZON.CO.JP</a></h1>
+  <h1 class="col-lg-4"><a href="../model/index.php">HEMZON.CO.JP</a></h1>
   <!-- 商品検索 -->
-  <form class="col-lg-4 keyword" action="item.php" method="post">
+  <form class="col-lg-4 keyword" action="../model/item.php" method="post">
     <label for="search">商品検索</label>
     <input type="search" name="keyword">
     <input type="submit" value="検索">
   </form>
   <!-- カート -->
-  <span class="material-icons col-lg-4" id="cart"><a href="cart.php">add_shopping_cart カート</a></span>
+  <span class="material-icons col-lg-4" id="cart"><a href="../model/cart.php">add_shopping_cart カート</a></span>
 
   </div>
 
@@ -42,9 +42,9 @@ rel="stylesheet">
 　<ul class="row">
 
     <li class="col-lg-1"><div class="sp-menu"><span class="material-icons" id="open">menu</span></div></li>
-    <li class="col-lg-1"><a href="newitem.php">新着商品</a></li>
-　  <li class="col-lg-1"><a href="history.php">購入履歴</a></li>
-　  <li class="col-lg-1"><a href="ranking.php">ランキング</a></li>
+    <li class="col-lg-1"><a href="../model/newitem.php">新着商品</a></li>
+　  <li class="col-lg-1"><a href="../model/history.php">購入履歴</a></li>
+　  <li class="col-lg-1"><a href="../model/ranking.php">ランキング</a></li>
 
 　</ul>
 
@@ -53,10 +53,10 @@ rel="stylesheet">
 <!-- スライドショー -->
 <nav>
   <ul id="slide">
-			<li><img src="images/slide1.jpg" alt=""></li>
-			<li><img src="images/slide2.jpg" alt=""></li>
-			<li><img src="images/slide3.jpg" alt=""></li>
-			<li><img src="images/slide4.jpg" alt=""></li>
+			<li><img src="../images/slide1.jpg" alt=""></li>
+			<li><img src="../images/slide2.jpg" alt=""></li>
+			<li><img src="../images/slide3.jpg" alt=""></li>
+			<li><img src="../images/slide4.jpg" alt=""></li>
 	</ul>
 </nav>
 
@@ -65,11 +65,11 @@ rel="stylesheet">
      <!--個別にこんにちは  -->
      <p><?php echo $_SESSION['name'];?>さん、こんにちは</p>
   <!-- ログアウト -->
-  <p><a href="logout.php">ログアウト</a></p>
+  <p><a href="../model/logout.php">ログアウト</a></p>
 
   <h2>カテゴリー別</h2>
   <?php foreach($_SESSION['category'] as $c):?>
-      <form action="category.php" name="<?php echo "cat_".$c;?>" method="post">
+      <form action="../model/category.php" name="<?php echo "cat_".$c;?>" method="post">
       <input type="hidden" name="cal" value="<?php echo $c;?>">
       <a href="<?php echo "javascript: cat_".$c.".submit()";?>"><?php echo $c;?></a>
     </form>
@@ -125,12 +125,12 @@ if($item==null){
 </div>
 </main>
 
-<p><a href="index.php">トップページに戻る</a></p>
+<p><a href="../model/index.php">トップページに戻る</a></p>
 
 <footer>
-  <p><a href="newitem.php">新着商品</a></p>
-  <p><a href="history.php">購入履歴</a></p>
-  <p><a href="ranking.php">ランキング</a></p>
+  <p><a href="../model/newitem.php">新着商品</a></p>
+  <p><a href="../model/history.php">購入履歴</a></p>
+  <p><a href="../model/ranking.php">ランキング</a></p>
 
   <p class="copyrights"><small>&copy;2021 Hemzon.All rights reserved.</small></p>
 </footer>
@@ -139,11 +139,9 @@ if($item==null){
 
 </div>
 
-<script src="js/jquery-3.5.1.min.js"></script>
-  <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-		<script
-			type="text/javascript"
-			src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script src="../js/jquery-3.5.1.min.js"></script>
+  <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

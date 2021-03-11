@@ -18,7 +18,7 @@ rel="stylesheet">
 
     <h1>ユーザー登録が完了しました。<br>
     早速ログインしてみましょう!</h1>
-    <p><a href="../">ログインする</a></p>
+    <p><a href="../model/login.php">ログインする</a></p>
 
 </div>
 

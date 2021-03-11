@@ -1,6 +1,6 @@
 <!-- トップページ プログラム部分 -->
 <?php 
-  require('common.php');
+  require('../controller/common.php');
 
   $pdo=connect();
 
@@ -33,5 +33,5 @@
   $stcat->closeCursor();
   $_SESSION['category']=$categorys;
 
-  require('t_index.php');
+  require('../view/t_index.php');
 ?>

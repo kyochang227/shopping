@@ -1,6 +1,6 @@
 <!-- 購入確認画面　プログラム部分 -->
 <?php
-    require('common.php');
+    require('../controller/common.php');
 
     $pdo=connect();
 
@@ -41,9 +41,9 @@
     $_SESSION['cart']=null;
     $_SESSION['history']=null;
 
-    header('Location: t_buy_complete.php');
+    header('Location: ../view/t_buy_complete.php');
 
     }
 
-    require('t_buy_check.php');
+    require('../view/t_buy_check.php');
 ?>

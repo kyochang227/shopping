@@ -1,6 +1,6 @@
 <!-- ログアウト処理 -->
 <?php
-require('common.php');
+require('../controller/common.php');
 
 //セッション情報を削除
 

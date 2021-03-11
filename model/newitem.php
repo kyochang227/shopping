@@ -1,6 +1,6 @@
 <!-- 新着商品(番号が新しい順に表示)　プログラム部分 -->
 <?php
-    require('common.php');
+    require('../controller/common.php');
 
     $pdo=connect();
     
@@ -9,5 +9,5 @@
     $newItem=$st->fetchAll();
     $st->closeCursor();
 
-    require('t_newitem.php');
+    require('../view/t_newitem.php');
 ?>

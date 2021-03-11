@@ -1,6 +1,6 @@
 <!-- ランキング プログラミング部分 -->
 <?php
-    require('common.php');
+    require('../controller/common.php');
 
     $pdo=connect();
 
@@ -13,5 +13,5 @@
     $ranking=$st->fetchAll();
     $st->closeCursor();
 
-    require('t_ranking.php');
+    require('../view/t_ranking.php');
 ?>

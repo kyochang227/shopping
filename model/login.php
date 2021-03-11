@@ -1,6 +1,6 @@
 <!-- ログイン画面 -->
 <?php
-require('common.php');
+require('../controller/common.php');
 
 $pdo = connect();
 
@@ -47,7 +47,7 @@ if(!empty($_POST)){
                 setcookie('password', $password, time() + 60*60*24*14); //2週間有効
             }
 
-            header('Location: index.php');
+            header('Location: ../model/index.php');
             exit();
 
         }else {
@@ -76,7 +76,7 @@ if(!empty($_POST)){
     <section id="lead">
         <h1>下記項目を入力し、ログインして下さい。</h1>
         <h2>入会手続きがまだの方はこちらからどうぞ。</h2>
-        <p>&raquo;<a href="join/">入会手続きをする</a></p>
+        <p>&raquo;<a href="../join/index.php">入会手続きをする</a></p>
     </section>
 
     <form action="" method="post" class="login">

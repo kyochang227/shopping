@@ -1,6 +1,6 @@
 <!-- 商品購入ページ プログラム -->
 <?php
-  require('common.php');
+  require('../controller/common.php');
   
   $name = htmlspecialchars($_POST['name'],ENT_QUOTES); //名前
   $address = htmlspecialchars($_POST['address'],ENT_QUOTES); //住所
@@ -67,5 +67,5 @@
  
   }
 
-  require('t_buy.php');
+  require('../view/t_buy.php');
 ?>

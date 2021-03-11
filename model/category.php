@@ -1,6 +1,6 @@
 <!-- カテゴリー別商品画面 プログラム部分 -->
 <?php
-    require('common.php');
+    require('../controller/common.php');
 
     $pdo=connect();
 
@@ -9,5 +9,5 @@
     $st->execute();
     $categorys=$st->fetchAll();
 
-    require('t_category.php');
+    require('../view/t_category.php');
 ?>

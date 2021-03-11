@@ -1,6 +1,6 @@
 <!-- 会員登録画面　入力内容確認画面 -->
 <?php
-require('../common.php');
+require('../controller/common.php');
 
 $pdo=connect();
 
@@ -76,7 +76,7 @@ rel="stylesheet">
 
     <div class="base">
         <a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a> | <input type="submit" value="登録する"><br>
-        <a href="../login.php">ログイン画面に戻る</a>
+        <a href="../model/login.php">ログイン画面に戻る</a>
     </div>
 
 </form>
