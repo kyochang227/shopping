@@ -44,6 +44,10 @@ rel="stylesheet">
 
 <div id="wrapper">
 
+<div class="registration">
+
+<h1>入力内容を確認してください</h1>
+
 <form action="" method="post" enctype="multipart/form-data">
 
 <input type="hidden" name="action" value="submit">
@@ -70,11 +74,14 @@ rel="stylesheet">
 
     </dl>
 
-    <div>
-        <a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a> | <input type="submit" value="登録する   ">
+    <div class="base">
+        <a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a> | <input type="submit" value="登録する"><br>
+        <a href="../login.php">ログイン画面に戻る</a>
     </div>
 
 </form>
+
+</div>
 
 </div>
 

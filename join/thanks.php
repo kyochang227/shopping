@@ -14,8 +14,13 @@ rel="stylesheet">
 
 <div id="wrapper">
 
-<h2>ユーザー登録が完了しました。</h2>
-<p><a href="../">ログインする</a></p>
+<div class="thanks">
+
+    <h1>ユーザー登録が完了しました。<br>
+    早速ログインしてみましょう!</h1>
+    <p><a href="../">ログインする</a></p>
+
+</div>
 
 </div>
 

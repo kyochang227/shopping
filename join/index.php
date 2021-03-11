@@ -96,63 +96,70 @@ rel="stylesheet">
 
 <div id="wrapper">
 
-    <h2>次のフォームをに必要事項をご記入ください。</h2>
+<div class="registration">
 
-    <form action="" method="post" enctype="multipart/form-data">
+<h1>次のフォームをに必要事項をご記入ください。</h1>
 
-        <dl>
-            <dt>氏名<span class="required">必須</span></dt>
+<form action="" method="post" enctype="multipart/form-data">
 
-            <dd>
-                <input type="text" name="name" size="35" maxlength="255"
-                value="<?php echo $name ;?>">
+    <dl>
+        <dt>氏名<span class="required">必須</span></dt>
 
-                <?php if($error['name'] == 'blank'):?>
-                <p class="error">*氏名を入力してください</p>        
-                <?php endif;?>
+        <dd>
+            <input type="text" name="name" size="35" maxlength="255"
+            value="<?php echo $name ;?>">
 
-            </dd>
+            <?php if($error['name'] == 'blank'):?>
+            <p class="error">*氏名を入力してください</p>        
+            <?php endif;?>
 
-            <dt>メールアドレス<span class="required">必須</span></dt>
+        </dd>
 
-            <dd>
-                <input type="text" name="email" size="35" maxlength="255"
-                value="<?php echo $email ;?>">
+        <dt>メールアドレス<span class="required">必須</span></dt>
 
-                <?php if($error['email'] == 'blank'):?>
-                <p class="error">*メールアドレスを入力してください</p>        
-                <?php endif;?>
+        <dd>
+            <input type="text" name="email" size="35" maxlength="255"
+            value="<?php echo $email ;?>">
 
-                <?php if($error['email'] == 'typo'):?>
-                <p class="error">*メールアドレスの入力に誤りがあります。</p>        
-                <?php endif;?>
+            <?php if($error['email'] == 'blank'):?>
+            <p class="error">*メールアドレスを入力してください</p>        
+            <?php endif;?>
 
-                <?php if($error['email'] == 'duplicate'):?>
-                <p class="error">*指定されたメールアドレスは既に登録されています</p>        
-                <?php endif;?>
-            </dd>
+            <?php if($error['email'] == 'typo'):?>
+            <p class="error">*メールアドレスの入力に誤りがあります。</p>        
+            <?php endif;?>
 
-            <dt>パスワード<span class="required">必須</span></dt>
+            <?php if($error['email'] == 'duplicate'):?>
+            <p class="error">*指定されたメールアドレスは既に登録されています</p>        
+            <?php endif;?>
+        </dd>
 
-            <dd>
-                <input type="password" name="password" size="10" maxlength="20"
-                value="<?php echo $password ;?>">
-            
-                <?php if($error['password'] == 'blank'):?>
-                <p class="error">*パスワードを入力してください</p>        
-                <?php endif;?>
+        <dt>パスワード<span class="required">必須</span></dt>
 
-                <?php if($error['password'] == 'typo'):?>
-                <p class="error">*パスワードの入力に誤りがあります。<br>
-                半角英数字を使用し、8文字以上入力してください</p>        
-                <?php endif;?>
+        <dd>
+            <input type="password" name="password" size="10" maxlength="20"
+            value="<?php echo $password ;?>">
+        
+            <?php if($error['password'] == 'blank'):?>
+            <p class="error">*パスワードを入力してください</p>        
+            <?php endif;?>
 
-            </dd>    
-        </dl>
+            <?php if($error['password'] == 'typo'):?>
+            <p class="error">*パスワードの入力に誤りがあります。<br>
+            半角英数字を使用し、8文字以上入力してください</p>        
+            <?php endif;?>
 
-        <div><input type="submit" value="入力内容を確認する"></div>
+        </dd>    
+    </dl>
 
-    </form>
+    <div class="base">
+        <input type="submit" value="入力内容を確認する"><br>
+        <a href="../login.php">ログイン画面に戻る</a>
+    </div>
+
+</form>
+
+</div>
 
 </div>
 

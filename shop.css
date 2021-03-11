@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
 /* 共通部分 */
-body{
-  background: rgb(218, 225, 228);
-}
-
 a{
   text-decoration: none;/*これは優先的に処理される*/
   cursor: pointer;
@@ -17,6 +13,37 @@ ul{
 #wrapper {
   background: rgb(218, 225, 228);
 }
+
+
+.base{
+  padding-bottom: 50px;
+}
+
+/* 共通部分終了 */
+
+/* 新規登録 */
+.registration{
+  text-align: center;
+}
+
+.registration h1{
+  margin-bottom: 100px;
+}
+
+.registration dl dd:nth-child(6){
+  margin-bottom: 100px;
+}
+/* 新規登録終了 */
+
+/* 登録完了画面 */
+.thanks{
+  text-align: center;
+}
+
+.thanks h1{
+  margin-bottom: 100px;
+}
+/* 登録完了画面 */
 
 /* ログイン */
 #lead{
@@ -241,10 +268,6 @@ footer {
   text-align: center;
 }
 
-.base{
-  padding-bottom: 50px;
-}
-
 .base_buy h1{
   margin-bottom: 100px;
 }
@@ -261,3 +284,13 @@ footer {
   margin-bottom: 100px;
 }
 /* 購入画面 購入確認画面 終了*/
+
+/* 購入完了画面 */
+.base_buyComplete{
+  text-align: center;
+}
+
+.base_buyComplete h1{
+  margin-bottom: 100px;
+}
+/* 購入完了画面 */

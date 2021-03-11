@@ -12,12 +12,23 @@ rel="stylesheet">
 </head>
 <body>
 
-<div class="base">
-  購入完了しました。
-</div>
+<div id="wrapper">
+
+<div class="base_buyComplete">
+
+<h1>
+  購入完了しました。<br>
+  ご購入ありがとうございます!
+</h1>
 
 <div class="base">
-  <a href="index.php">お買い物に戻る</a>　
+
+  <a href="index.php">お買い物に戻る</a>
+  　
+</div>
+
+</div>
+
 </div>
 
   <script src="js/jquery-3.5.1.min.js"></script>

@@ -3,7 +3,17 @@
   session_start();
 
   function connect() {
-    return new PDO("mysql:dbname=shop", "root");//値を渡す
+
+    try{
+
+      return new PDO("mysql:dbname=shop", "root");//値を渡す
+
+    } catch (PDOException $e){
+
+      echo 'DB接続エラー: ' . $e->getMessage();
+      
+    }
+    
   }
 
   function img_tag($code) {
