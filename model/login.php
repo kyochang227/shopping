@@ -22,18 +22,13 @@ if(!empty($_POST)){
     //ユーザーが入力したemailとpasswordが一致する情報を探す
     if($email !='' && $password !=''){
 
-        $login=$pdo->prepare("SELECT * FROM members WHERE email=? AND
-        password=?");
-        $login->execute(array(
-
-            $email,
-            sha1($password)
-            
-        ));
+        $login=$pdo->prepare("SELECT id,name,email,password FROM members WHERE email=:email");
+        $login->bindParam(":email",$email);
+        $login->execute();
         $member = $login->fetch();
         $login->closeCursor();
 
-        if($member){ //メンバーが存在する場合
+        if(password_verify($password,$member['password'])){ //メンバーが存在する場合
 
             $_SESSION['id']=$member['id'];
             $_SESSION['time']=time();

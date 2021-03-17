@@ -100,7 +100,6 @@ rel="stylesheet">
 
     <tr>
 
-        <td>ユーザーid</td>
         <td>氏名</td>
         <td>住所</td>
         <td>電話番号</td>
@@ -116,7 +115,6 @@ rel="stylesheet">
 
     <tr>
 
-      <td><?php echo $h['user_id']; ?></td>
       <td><?php echo $h['name']; ?></td>
       <td><?php echo $h['address']; ?></td>
       <td><?php echo $h['tel']; ?></td>

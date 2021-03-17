@@ -19,7 +19,7 @@ if(!empty($_POST)){
     echo $ret=$st->execute(array(
         $_SESSION['join']['name'],
         $_SESSION['join']['email'],
-        sha1($_SESSION['join']['password'])
+        password_hash(($_SESSION['join']['password']), PASSWORD_DEFAULT)
     ));
 
     unset($_SESSION['join']);

@@ -20,8 +20,6 @@
   //エラー項目の確認
   if (!empty($_POST)) {
 
-    $passwordSha1=sha1($password);
-
     //入力欄が空だった場合
     if($name==''){
 
@@ -48,12 +46,12 @@
       $error['email']='mismatch';
 
     }
-    if($passwordSha1==''){
+    if($password==''){
 
       $error['password']='blank';
 
     }
-    if($_SESSION['password'] != $passwordSha1){
+    if(!password_verify($password,$_SESSION['password'])){
       $error['password']='mismatch';
     }
 

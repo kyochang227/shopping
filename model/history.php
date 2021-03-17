@@ -4,7 +4,11 @@ require('../controller/common.php');
 
 $pdo=connect();
 
-$st=$pdo->query("SELECT * FROM buy_history");
+$id=$_SESSION['id'];
+
+$st=$pdo->prepare("SELECT * FROM buy_history WHERE user_id=:id");
+$st->bindParam(":id",$id);
+$st->execute();
 $history=$st->fetchAll();
 $st->closeCursor();
 
