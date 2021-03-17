@@ -78,6 +78,7 @@ ul{
 .top_nav{
   background: rgb(41, 1, 1);
   color: white;
+  margin-bottom: 50px;
   padding: 0 0 20px 0;
 }
 
@@ -89,6 +90,10 @@ ul{
 /* トップナビ終了 */
 
 /* スライドショー*/
+.slideshow{
+  margin-bottom: 100px;
+}
+
 #slide,#controll,#slide>li,#controll>li{
 	margin:0;
 	padding:0;

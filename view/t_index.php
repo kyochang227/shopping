@@ -53,7 +53,7 @@ rel="stylesheet">
 <!-- トップナビ終了 -->
 
 <!-- スライドショー -->
-<nav>
+<div class="slideshow">
 
   <ul id="slide">
 
@@ -64,7 +64,7 @@ rel="stylesheet">
 
 	</ul>
 
-</nav>
+</div>
 <!-- スライドショー終了 -->
 
 <!-- ハンバーガーメニュー ナビ -->

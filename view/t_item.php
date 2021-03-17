@@ -51,14 +51,18 @@ rel="stylesheet">
 </nav>
 
 <!-- スライドショー -->
-<nav>
+<div class="slideshow">
+
   <ul id="slide">
+
 			<li><img src="../images/slide1.jpg" alt=""></li>
 			<li><img src="../images/slide2.jpg" alt=""></li>
 			<li><img src="../images/slide3.jpg" alt=""></li>
 			<li><img src="../images/slide4.jpg" alt=""></li>
+
 	</ul>
-</nav>
+  
+</div>
 
 <div class="overlay">
   <span class="material-icons" id="close">close</span>
