@@ -4,7 +4,7 @@ require('../controller/common.php');
 
 $pdo=connect();
 
-$id=$_SESSION['id'];
+$id=$_SESSION['id'];//セッションのユーザーid
 
 $st=$pdo->prepare("SELECT * FROM buy_history WHERE user_id=:id");
 $st->bindParam(":id",$id);

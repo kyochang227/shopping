@@ -3,7 +3,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-sacale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>HEMZON | 新着商品</title>
 <link rel="stylesheet" href="../shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"

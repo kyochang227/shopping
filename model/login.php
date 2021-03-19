@@ -47,20 +47,22 @@ if(!empty($_POST)){
 
         }else {
 
-            $er = 'failed';
+            $error = 'failed';
             
         }
     }else{
 
-        $er = 'blank';
+        $error = 'blank';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>Hemzon | ログイン画面</title>
 <link rel="stylesheet" href="../shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -87,11 +89,11 @@ rel="stylesheet">
             <input type="text" name="email" size="35" maxlength="255"
             value="<?php echo $email; ?>">
         
-            <?php if($er == 'blank'):?>
+            <?php if($error == 'blank'):?>
             <p class="error">*メールアドレスとパスワードをご記入ください。</p>
             <?php endif;?>
         
-            <?php if($er =='failed'):?>
+            <?php if($error =='failed'):?>
             <p class="error">*ログインに失敗しました。正しくご記入ください</p>
             <?php endif;?>
 
