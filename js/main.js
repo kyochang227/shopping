@@ -90,12 +90,6 @@
         let clientRect=slide.getBoundingClientRect() ;
         let slide_x=window.pageXOffset+clientRect.left ;
         let slide_y=window.pageYOffset+clientRect.top ;
-        const next=document.getElementById("next");
-        const back=document.getElementById("back");
-        next.style.left=(slide_x+max_width-30)+"px";
-        back.style.left=(slide_x-20)+"px";
-        next.style.top=((slide_y+max_height)/2-25)+"px";
-        back.style.top=((slide_y+max_height)/2-25)+"px";
         keika_time=(Math.floor(max_width/idou__kyori))*(idou_time+5);//5は処理時間5ms目安
         timeID=setTimeout(disp,stop_time);　//dispが動くよ
     }

@@ -21,11 +21,11 @@
 
   // 例　商品コード「2」を4個カートに→$_SESSION['cart'][2]=4
   //t_indexから送信されると商品の個数を受け取る
-  if ($_POST['submit']) {
+  if (@$_POST['submit']) {
     
     if($_POST['num'] > 0){//0以外の数字だけ処理を実行する
 
-      $_SESSION['cart'][$_POST['code']] += $_POST['num']; //すでにカートに商品が入ってる状態でカートに入れると足される;
+      @$_SESSION['cart'][$_POST['code']] += $_POST['num']; //すでにカートに商品が入ってる状態でカートに入れると足される;
     }
   }
   

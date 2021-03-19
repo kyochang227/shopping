@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>HEMZON | "<?php echo htmlspecialchars($_POST["keyword"],ENT_QUOTES,'UTF-8');?>"の検索結果</title>
+<title>SHOPPING | "<?php echo htmlspecialchars($_POST["keyword"],ENT_QUOTES,'UTF-8');?>"の検索結果</title>
 <link rel="stylesheet" href="../shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -22,7 +22,7 @@ rel="stylesheet">
   <div class="row">
   
   <!-- ロゴ -->
-  <h1 class="col-lg-4"><a href="../model/index.php">HEMZON.CO.JP</a></h1>
+  <h1 class="col-lg-4"><a href="../model/index.php">SHOPPING.CO.JP</a></h1>
   <!-- 商品検索 -->
   <form class="col-lg-4 keyword" action="../model/item.php" method="post">
     <label for="search">商品検索</label>
@@ -137,7 +137,7 @@ if($item==null){
   <p><a href="../model/history.php">購入履歴</a></p>
   <p><a href="../model/ranking.php">ランキング</a></p>
 
-  <p class="copyrights"><small>&copy;2021 Hemzon.All rights reserved.</small></p>
+  <p class="copyrights"><small>&copy;2021 SHOPPING.All rights reserved.</small></p>
 </footer>
 
 </div>

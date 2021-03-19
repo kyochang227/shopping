@@ -12,8 +12,9 @@
     //セッションの時刻を現時刻に変更
     $_SESSION['time']=time();
 
-    $members=$pdo->prepare("SELECT * FROM members WHERE id=?");
-    $members->execute(array($_SESSION['id']));
+    $members=$pdo->prepare("SELECT * FROM members WHERE id=:session");
+    $members->bindParam(":session",$_SESSION['id']);
+    $members->execute();
     $member=$members->fetch();  
     $members->closeCursor();
 

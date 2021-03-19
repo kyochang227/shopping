@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Hemzon | 購入確認</title>
+<title>SHOPPING | 購入確認</title>
 <link rel="stylesheet" href="../shop.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
@@ -87,7 +87,7 @@ rel="stylesheet">
 
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-	<script type="text/javascript" src="../bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="../bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>
