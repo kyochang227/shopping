@@ -16,3 +16,6 @@
   <li>ファイル「view」には各画面のHTMLを格納</li> 
   <li>ファイル「join」は新規会員登録の処理、HTMLを格納</li>
 </ul>
+
+## 仕様書
+https://github.com/kyochang227/shopping/blob/main/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E3%80%80%E4%BB%95%E6%A7%98%E6%9B%B8.pptx
