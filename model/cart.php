@@ -31,7 +31,7 @@
   
    //ユーザーが打った情報をSQL文に含める準備
   foreach($_SESSION['cart'] as $code => $num) {
-
+    
     $st = $pdo->prepare("SELECT * FROM goods WHERE code=:code");
 
     $st->bindParam(":code",$code);

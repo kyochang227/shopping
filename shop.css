@@ -2,7 +2,7 @@
 
 /* 共通部分 */
 a{
-  text-decoration: none;/*これは優先的に処理される*/
+  text-decoration: none;
   cursor: pointer;
 }
 
