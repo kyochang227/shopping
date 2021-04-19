@@ -24,12 +24,14 @@ rel="stylesheet">
 
 <div class="base">
 
-  <?php if ($error) echo "<span class=\"error\">$error</span>" ?>
   <form action="../model/upload.php" method="post" enctype="multipart/form-data">
     <p>
       商品画像（JPEGのみ）<br>
       <input type="file" name="pic">
     </p>
+      <?php if($error['img'] == 'blank'):?>
+        <p class="error">*画像を選択してください。</p>        
+      <?php endif;?>
     <p>
       <input type="hidden" name="code" value="<?php echo $code ?>">
       <input type="submit" name="submit" value="追加">

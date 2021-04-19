@@ -4,21 +4,34 @@
   require('../controller/common.php');
 
   $pdo = connect(); //SQLよりgoodsを呼び出す
-  $error = ''; //フォーム内が空だった場合エラー
   
   $code = $_POST['code'];
-  $name = $_POST['name'];
-  $comment = $_POST['comment'];
-  $price = $_POST['price'];
-  $name_ruby = $_POST['name_ruby'];
-  $category = $_POST['category'];
+  $name = htmlspecialchars($_POST['name'],ENT_QUOTES);
+  $comment = htmlspecialchars($_POST['comment'],ENT_QUOTES);
+  $price = htmlspecialchars($_POST['price'],ENT_QUOTES);
+  $name_ruby = htmlspecialchars($_POST['name_ruby'],ENT_QUOTES);
+  $category = htmlspecialchars($_POST['category']);
 
   if (@$_POST['submit']) {
 
-    if (!$name) $error .= '商品名がありません。<br>';
-    if (!$comment) $error .= '商品説明がありません。<br>';
-    if (!$price) $error .= '価格がありません。<br>';
-    if (preg_match('/\D/', $price)) $error .= '価格が不正です。<br>';
+    if($name == ''){
+      $error['name'] = 'blank';
+    }
+    if($comment == ''){
+      $error['comment'] = 'blank';
+    }
+    if($price == ''){
+      $error['price'] = 'blank';
+    }
+    if($name_ruby == ''){
+      $error['name_ruby'] = 'blank';
+    }
+    if($category == ''){
+      $error['category'] = 'blank';
+    }
+    if (preg_match('/\D/', $price)){
+        $error['price'] = 'typo';
+    }
 
     if (!$error) {
 

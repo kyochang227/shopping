@@ -3,8 +3,6 @@
 
   require('../controller/common.php');
 
-  $error = '';
-
   if (@$_POST['submit']) {
 
     $code = $_POST['code'];
@@ -16,7 +14,7 @@
 
     } else {
 
-      $error .= 'ファイルを選択してください。<br>';
+      $error['img'] = 'blank';
 
     }
 

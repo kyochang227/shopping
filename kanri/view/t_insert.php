@@ -24,24 +24,38 @@ rel="stylesheet">
 <main>
 <div class="base">
 
-  <?php if ($error) echo "<span class=\"error\">$error</span>" ?>
   <form action="insert.php" method="post">
     <p>
       商品名<br>
       <input type="text" name="name" value="<?php echo $name ?>">
     </p>
+      <?php if($error['name'] == 'blank'):?>
+        <p class="error">*商品名を入力してください</p>        
+      <?php endif;?>
     <p>
       読み方(平仮名)<br>
       <input type="text" name="name_ruby" value="<?php echo $name_ruby ?>">
     </p>
+      <?php if($error['name_ruby'] == 'blank'):?>
+        <p class="error">*読み仮名を入力してください</p>        
+      <?php endif;?>
     <p>
       商品説明<br>
       <textarea name="comment" rows="10" cols="60"><?php echo $comment ?></textarea>
     </p>
+      <?php if($error['comment'] == 'blank'):?>
+        <p class="error">*商品説明を入力してください</p>        
+      <?php endif;?>
     <p>
       価格<br>
       <input type="text" name="price" value="<?php echo $price ?>">
     </p>
+      <?php if($error['price'] == 'blank'):?>
+        <p class="error">*商品価格を入力してください</p>        
+      <?php endif;?>
+      <?php if($error['price'] == 'typo'):?>
+        <p class="error">*商品価格が適正ではありません。半角数字で入力してください。</p>       
+      <?php endif;?>
     <p>
       カテゴリー<br>
       <select name="category">
@@ -50,6 +64,9 @@ rel="stylesheet">
         <?php endforeach; ?>
       </select>
     </p>
+      <?php if($error['category'] == 'blank'):?>
+        <p class="error">*カテゴリーを入力してください。</p>        
+      <?php endif;?>
     <p>
       <input type="submit" name="submit" value="追加">
     </p>
@@ -59,7 +76,7 @@ rel="stylesheet">
 </main>
 
 <div class="base">
-  <a href="index.php">一覧に戻る</a>　
+  <a href="../model/index.php">一覧に戻る</a>　
 </div>
 
 </div>
