@@ -7,7 +7,7 @@
 
     try{
       //値を渡す
-      return new PDO('mysql:host=localhost;dbname=shop;charset=utf8','root');
+      return new PDO('mysql:host=localhost:3307;dbname=shop;charset=utf8','root');
 
     } catch (PDOException $e){
       //エラー表示
