@@ -1,7 +1,14 @@
 <!-- 商品を削除するページ -->
 <?php
-  require 'common.php';
+  require('../controller/common.php');
+
   $pdo = connect();
-  $st = $pdo->query("DELETE FROM goods WHERE code={$_GET['code']}");
-  header('Location: index.php');
+  $code = $_GET['code'];
+
+  $st = $pdo->prepare("DELETE FROM goods WHERE code=:code");
+  $st->bindParam(':code',$code);
+  $st->execute();
+  $st->closeCursor();
+  
+  header('Location: ../model/index.php');
 ?>
