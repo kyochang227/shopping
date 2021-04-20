@@ -19,12 +19,12 @@ rel="stylesheet">
 <div class="container-fluid"><!--gridシステム使用-->
 
 <header>
-  <h1>管理画面</h1>
+  <h1 class="kanri">修正画面</h1>
 </header>
 
 <main>
 
-<div class="base">
+<div class="base_kanri">
 
   <form action="../model/edit.php" method="post">
 

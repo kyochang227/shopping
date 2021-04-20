@@ -18,18 +18,18 @@ rel="stylesheet">
 <div class="container-fluid"><!--gridシステム使用-->
 
 <header>
-  <h1>管理画面</h1>
+  <h1 class="kanri">管理画面</h1>
 </header>
 
 <main>
 <!-- 商品一覧画面 -->
-<div class="items">
+<div class="items container">
 
     <div class="table-resposive row">
 
     <?php foreach ($goods as $g): ?> <!--テーブルgoodsのカラムから値を取り出す-->
 
-    <table class="table table-striped table-bordered col-lg-4">
+    <table class="table table-striped table-bordered col-lg-6">
     <tr>
 
       <td class="item_img">

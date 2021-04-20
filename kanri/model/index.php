@@ -6,10 +6,10 @@
   $st = $pdo->query("SELECT * FROM goods");
   $goods = $st->fetchAll();
 
-  // $stcat=$pdo->query("SELECT category FROM item_category");
-  // $category=$stcat->fetchAll(PDO::FETCH_COLUMN);
-  // $stcat->closeCursor();
-  // $_SESSION['category']=$category;
+  $stcat=$pdo->query("SELECT category FROM item_category");
+  $category=$stcat->fetchAll(PDO::FETCH_COLUMN);
+  $stcat->closeCursor();
+  $_SESSION['category']=$category;
 
   require('../view/t_index.php');
 ?>

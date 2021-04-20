@@ -21,6 +21,17 @@ ul{
 
 /* 共通部分終了 */
 
+/* 管理画面 */
+.kanri {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.base_kanri {
+  text-align: center;
+}
+/* 管理画面　ここまで */
+
 /* 新規登録 */
 .registration{
   text-align: center;
@@ -279,3 +290,10 @@ footer {
   margin-bottom: 100px;
 }
 /* 購入完了画面 */
+
+/* 詳細画面 */
+.goods_img img {
+  width: 500px;
+  height: 500px;
+}
+/* 詳細画面　終了 */

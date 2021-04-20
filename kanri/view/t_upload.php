@@ -17,12 +17,12 @@ rel="stylesheet">
 <div class="container-fluid"><!--gridシステム使用-->
 
 <header>
-  <h1>画像追加</h1>
+  <h1 class="kanri">画像追加</h1>
 </header>
 
 <main>
 
-<div class="base">
+<div class="base_kanri">
 
   <form action="../model/upload.php" method="post" enctype="multipart/form-data">
     <p>

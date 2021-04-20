@@ -18,11 +18,11 @@ rel="stylesheet">
 <div class="container-fluid"><!--gridシステム使用-->
 
 <header>
-  <h1>商品追加</h1>
+  <h1 class="kanri">商品追加</h1>
 </header>
 
 <main>
-<div class="base">
+<div class="base_kanri">
 
   <form action="insert.php" method="post">
     <p>
